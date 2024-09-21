@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+issueTrackerURL="https://github.com/Mrthomas20121/ForegoingTweaker/issues"
+
+[[mods]]
+modId="charred_horizons"
+version="1.20.1-1.2.0"
+displayName="Charred Horizons"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/charred_horizons"
+#logoFile="tinkers_reforged_logo.png"
+authors="Mrthomas20121"
+description='''
+Add new Nether biomes.
+'''
+
+[[dependencies.charred_horizons]]
+	modId = "forge"
+	mandatory = true
+	versionRange = "[47.3.7,)"
+	ordering = "NONE"
+	side = "BOTH"
