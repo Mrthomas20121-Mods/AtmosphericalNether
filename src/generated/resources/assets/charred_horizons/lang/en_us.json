@@ -7,8 +7,10 @@
   "block.charred_horizons.withered_stem": "Withered Stem",
   "creative_tab.charred_horizons.block": "Charred Horizons Blocks",
   "creative_tab.charred_horizons.item": "Charred Horizons Items",
+  "item.charred_horizons.blaze_slayer": "Blaze Slayer",
   "item.charred_horizons.blight_ring": "Blight Ring",
   "item.charred_horizons.gold_ring": "Gold Ring",
   "item.charred_horizons.mysterious_charm": "Mysterious Charm",
-  "item.charred_horizons.netherite_ring.effect": "Piglins become neutral."
+  "item.charred_horizons.netherite_ring.effect": "Piglins become neutral.",
+  "item.charred_horizons.withered_sword": "Withered Sword"
 }

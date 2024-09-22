@@ -19,6 +19,7 @@ public class CharredDatagen {
         CharredBlockTagProvider tags = new CharredBlockTagProvider(packOutput, lookupProvider, fileHelper);
         generator.addProvider(event.includeServer(), tags);
         generator.addProvider(event.includeServer(), new CharredItemTagProvider(packOutput, lookupProvider, tags.contentsGetter(), fileHelper));
+        generator.addProvider(event.includeServer(), new CharredEntityTagsProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeServer(), new CharredCurioDataProvider(packOutput, fileHelper, lookupProvider));
 
         generator.addProvider(event.includeClient(), new CharredBlockstateProvider(packOutput, fileHelper));

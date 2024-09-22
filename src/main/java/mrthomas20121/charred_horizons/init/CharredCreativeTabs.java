@@ -30,6 +30,8 @@ public class CharredCreativeTabs {
         out.accept(CharredItems.GOLD_RING.get());
         out.accept(CharredItems.BLIGHT_RING.get());
         out.accept(CharredItems.MYSTERIOUS_CHARM.get());
+        out.accept(CharredItems.WITHERED_SWORD.get());
+        out.accept(CharredItems.BLAZE_SLAYER.get());
     }
 
     public static void fillBlockTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {

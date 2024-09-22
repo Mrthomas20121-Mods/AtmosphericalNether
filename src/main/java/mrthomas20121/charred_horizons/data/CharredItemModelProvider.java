@@ -22,6 +22,9 @@ public class CharredItemModelProvider extends ItemModelProvider {
         basicItem(CharredItems.BLIGHT_RING.get());
         basicItem(CharredItems.MYSTERIOUS_CHARM.get());
 
+        basicItem(CharredItems.BLAZE_SLAYER.get());
+        basicItem(CharredItems.WITHERED_SWORD.get());
+
         itemBlock(CharredBlocks.BLIGHT_NYLIUM.get());
         itemBlock(CharredBlocks.WITHERED_NYLIUM.get());
 

@@ -25,6 +25,8 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.MYSTERIOUS_CHARM, "Mysterious Charm");
         addItem(CharredItems.BLIGHT_RING, "Blight Ring");
         addItem(CharredItems.GOLD_RING, "Gold Ring");
+        addItem(CharredItems.BLAZE_SLAYER, "Blaze Slayer");
+        addItem(CharredItems.WITHERED_SWORD, "Withered Sword");
         add("item.charred_horizons.netherite_ring.effect", "Piglins become neutral.");
     }
 }
