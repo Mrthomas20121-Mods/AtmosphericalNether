@@ -1,0 +1,14 @@
+{
+  "block.charred_horizons.blight_nether_wart": "Blight Nether Wart",
+  "block.charred_horizons.blight_nylium": "Blight Nylium",
+  "block.charred_horizons.blight_stem": "Blight Stem",
+  "block.charred_horizons.withered_nether_wart": "Withered Nether Wart",
+  "block.charred_horizons.withered_nylium": "Withered Nylium",
+  "block.charred_horizons.withered_stem": "Withered Stem",
+  "creative_tab.charred_horizons.block": "Charred Horizons Blocks",
+  "creative_tab.charred_horizons.item": "Charred Horizons Items",
+  "item.charred_horizons.blight_ring": "Blight Ring",
+  "item.charred_horizons.gold_ring": "Gold Ring",
+  "item.charred_horizons.mysterious_charm": "Mysterious Charm",
+  "item.charred_horizons.netherite_ring.effect": "Piglins become neutral."
+}
