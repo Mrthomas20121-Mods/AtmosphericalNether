@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "charred_horizons:block/withered_slab"
+    },
+    "type=double": {
+      "model": "charred_horizons:block/withered_planks"
+    },
+    "type=top": {
+      "model": "charred_horizons:block/withered_slab_top"
+    }
+  }
+}

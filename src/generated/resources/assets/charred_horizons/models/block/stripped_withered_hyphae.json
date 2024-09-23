@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "charred_horizons:block/stripped_withered_stem_top"
+  }
+}

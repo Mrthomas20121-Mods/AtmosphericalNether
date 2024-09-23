@@ -21,6 +21,8 @@ public class CharredDatagen {
         generator.addProvider(event.includeServer(), new CharredItemTagProvider(packOutput, lookupProvider, tags.contentsGetter(), fileHelper));
         generator.addProvider(event.includeServer(), new CharredEntityTagsProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeServer(), new CharredCurioDataProvider(packOutput, fileHelper, lookupProvider));
+        generator.addProvider(event.includeServer(), new CharredRecipeProvider(packOutput));
+        generator.addProvider(event.includeServer(), new CharredRegistrySets(packOutput, lookupProvider));
 
         generator.addProvider(event.includeClient(), new CharredBlockstateProvider(packOutput, fileHelper));
         generator.addProvider(event.includeClient(), new CharredLangProvider(packOutput));

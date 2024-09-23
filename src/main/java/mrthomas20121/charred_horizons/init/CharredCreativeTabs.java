@@ -32,15 +32,37 @@ public class CharredCreativeTabs {
         out.accept(CharredItems.MYSTERIOUS_CHARM.get());
         out.accept(CharredItems.WITHERED_SWORD.get());
         out.accept(CharredItems.BLAZE_SLAYER.get());
+        out.accept(CharredBlocks.BLIGHT_FUNGUS.get());
+        out.accept(CharredBlocks.WITHERED_FUNGUS.get());
     }
 
     public static void fillBlockTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
         out.accept(CharredBlocks.BLIGHT_NYLIUM.get());
         out.accept(CharredBlocks.BLIGHT_NETHER_WART.get());
         out.accept(CharredBlocks.BLIGHT_STEM.get());
+        out.accept(CharredBlocks.BLIGHT_PLANKS.get());
+        out.accept(CharredBlocks.BLIGHT_SLAB.get());
+        out.accept(CharredBlocks.BLIGHT_STAIRS.get());
+        out.accept(CharredBlocks.BLIGHT_FENCE.get());
+        out.accept(CharredBlocks.BLIGHT_FENCE_GATE.get());
+        out.accept(CharredBlocks.BLIGHT_TRAPDOOR.get());
+        out.accept(CharredBlocks.BLIGHT_DOOR.get());
+        out.accept(CharredBlocks.BLIGHT_BUTTON.get());
+        out.accept(CharredBlocks.BLIGHT_SIGN.get());
+        out.accept(CharredBlocks.BLIGHT_HANGING_SIGN.get());
 
         out.accept(CharredBlocks.WITHERED_NYLIUM.get());
         out.accept(CharredBlocks.WITHERED_NETHER_WART.get());
         out.accept(CharredBlocks.WITHERED_STEM.get());
+        out.accept(CharredBlocks.WITHERED_PLANKS.get());
+        out.accept(CharredBlocks.WITHERED_SLAB.get());
+        out.accept(CharredBlocks.WITHERED_STAIRS.get());
+        out.accept(CharredBlocks.WITHERED_FENCE.get());
+        out.accept(CharredBlocks.WITHERED_FENCE_GATE.get());
+        out.accept(CharredBlocks.WITHERED_TRAPDOOR.get());
+        out.accept(CharredBlocks.WITHERED_DOOR.get());
+        out.accept(CharredBlocks.WITHERED_BUTTON.get());
+        out.accept(CharredBlocks.WITHERED_SIGN.get());
+        out.accept(CharredBlocks.WITHERED_HANGING_SIGN.get());
     }
 }

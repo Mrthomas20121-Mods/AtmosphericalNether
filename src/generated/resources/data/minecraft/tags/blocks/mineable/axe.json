@@ -1,6 +1,34 @@
 {
   "values": [
     "charred_horizons:blight_stem",
-    "charred_horizons:withered_stem"
+    "charred_horizons:blight_hyphae",
+    "charred_horizons:stripped_blight_stem",
+    "charred_horizons:stripped_blight_hyphae",
+    "charred_horizons:blight_planks",
+    "charred_horizons:blight_slab",
+    "charred_horizons:blight_stairs",
+    "charred_horizons:blight_fence",
+    "charred_horizons:blight_fence_gate",
+    "charred_horizons:blight_pressure_plate",
+    "charred_horizons:blight_button",
+    "charred_horizons:blight_trapdoor",
+    "charred_horizons:blight_door",
+    "charred_horizons:blight_sign",
+    "charred_horizons:blight_hanging_sign",
+    "charred_horizons:withered_stem",
+    "charred_horizons:withered_hyphae",
+    "charred_horizons:stripped_withered_stem",
+    "charred_horizons:stripped_withered_hyphae",
+    "charred_horizons:withered_planks",
+    "charred_horizons:withered_slab",
+    "charred_horizons:withered_stairs",
+    "charred_horizons:withered_fence",
+    "charred_horizons:withered_fence_gate",
+    "charred_horizons:withered_pressure_plate",
+    "charred_horizons:withered_button",
+    "charred_horizons:withered_trapdoor",
+    "charred_horizons:withered_door",
+    "charred_horizons:withered_sign",
+    "charred_horizons:withered_hanging_sign"
   ]
 }

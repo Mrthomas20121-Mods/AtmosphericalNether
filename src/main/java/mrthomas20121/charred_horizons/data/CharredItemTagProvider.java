@@ -1,11 +1,14 @@
 package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
+import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import mrthomas20121.charred_horizons.init.CharredTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -23,5 +26,27 @@ public class CharredItemTagProvider extends ItemTagsProvider {
 
         tag(CharredTags.Items.CURIO_RING).add(CharredItems.GOLD_RING.get(), CharredItems.BLIGHT_RING.get());
         tag(CharredTags.Items.CURIO_CHARM).add(CharredItems.MYSTERIOUS_CHARM.get());
+
+        tag(ItemTags.PLANKS)
+                .add(
+                        CharredBlocks.BLIGHT_PLANKS.get().asItem(),
+                        CharredBlocks.WITHERED_PLANKS.get().asItem()
+                );
+
+        tag(ItemTags.LOGS)
+                .add(
+                        CharredBlocks.BLIGHT_STEM.get().asItem(),
+                        CharredBlocks.WITHERED_STEM.get().asItem()
+                );
+
+        tag(CharredTags.Items.LOGS_BLIGHT)
+                .add(
+                        CharredBlocks.BLIGHT_STEM.get().asItem()
+                );
+
+        tag(CharredTags.Items.LOGS_WITHERED)
+                .add(
+                        CharredBlocks.WITHERED_STEM.get().asItem()
+                );
     }
 }

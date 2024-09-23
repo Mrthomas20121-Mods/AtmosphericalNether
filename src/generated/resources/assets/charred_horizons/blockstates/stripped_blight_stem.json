@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "charred_horizons:block/stripped_blight_stem_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "charred_horizons:block/stripped_blight_stem"
+    },
+    "axis=z": {
+      "model": "charred_horizons:block/stripped_blight_stem_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "charred_horizons:block/stripped_withered_stem_top",
+    "side": "charred_horizons:block/stripped_withered_stem"
+  }
+}

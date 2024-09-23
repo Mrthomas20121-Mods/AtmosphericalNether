@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "charred_horizons:block/withered_door_bottom",
+    "top": "charred_horizons:block/withered_door_top"
+  }
+}

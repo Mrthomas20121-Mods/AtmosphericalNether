@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "charred_horizons:block/blight_door_bottom",
+    "top": "charred_horizons:block/blight_door_top"
+  }
+}

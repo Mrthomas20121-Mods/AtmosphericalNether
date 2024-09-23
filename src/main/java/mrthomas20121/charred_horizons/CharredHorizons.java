@@ -1,6 +1,7 @@
 package mrthomas20121.charred_horizons;
 
 import mrthomas20121.charred_horizons.data.CharredDatagen;
+import mrthomas20121.charred_horizons.init.CharredBlockEntities;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredCreativeTabs;
 import mrthomas20121.charred_horizons.init.CharredItems;
@@ -18,6 +19,7 @@ public class CharredHorizons {
 
 		CharredItems.ITEMS.register(bus);
 		CharredBlocks.BLOCKS.register(bus);
+		CharredBlockEntities.BLOCK_ENTITY_TYPES.register(bus);
 		CharredCreativeTabs.CREATIVE_TABS.register(bus);
 
 		bus.addListener(CharredDatagen::init);
