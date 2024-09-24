@@ -15,7 +15,8 @@ public class CharredRegistrySets extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, CharredConfiguredFeatures::bootstrap)
-            .add(Registries.PLACED_FEATURE, CharredPlacedFeatures::bootstrap);
+            .add(Registries.PLACED_FEATURE, CharredPlacedFeatures::bootstrap)
+            .add(Registries.BIOME, CharredBiomes::bootstrap);
 
     public CharredRegistrySets(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(CharredHorizons.MOD_ID));

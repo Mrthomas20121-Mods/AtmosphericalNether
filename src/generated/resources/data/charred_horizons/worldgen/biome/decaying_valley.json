@@ -1,0 +1,96 @@
+{
+  "carvers": {
+    "air": "minecraft:nether_cave"
+  },
+  "downfall": 0.0,
+  "effects": {
+    "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
+    "fog_color": 6070716,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.soul_sand_valley.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.soul_sand_valley"
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:mycelium"
+      },
+      "probability": 0.00625
+    },
+    "sky_color": 7254527,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:patch_fire",
+      "minecraft:glowstone_extra",
+      "minecraft:glowstone",
+      "minecraft:brown_mushroom_nether",
+      "minecraft:red_mushroom_nether",
+      "minecraft:ore_magma",
+      "minecraft:ore_soul_sand"
+    ],
+    [],
+    [
+      "minecraft:spring_lava",
+      "charred_horizons:withered_fungus",
+      "charred_horizons:withered_vegetation"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {
+    "minecraft:husk": {
+      "charge": 0.5,
+      "energy_budget": 0.15
+    },
+    "minecraft:wither_skeleton": {
+      "charge": 0.5,
+      "energy_budget": 0.15
+    }
+  },
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:wither_skeleton",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 20
+      },
+      {
+        "type": "minecraft:husk",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 15
+      },
+      {
+        "type": "minecraft:strider",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 60
+      }
+    ],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 2.0
+}

@@ -17,6 +17,7 @@ public class CharredLangProvider extends LanguageProvider {
         add("creative_tab.charred_horizons.block", "Charred Horizons Blocks");
         add("creative_tab.charred_horizons.item", "Charred Horizons Items");
         addBlock(CharredBlocks.EXOTIC_SHROOMLIGHT, "Exotic Shroomlight");
+        addBlock(CharredBlocks.BLIGHT_ROOT, "Blight Root");
         addBlock(CharredBlocks.BLIGHT_NYLIUM, "Blight Nylium");
         addBlock(CharredBlocks.BLIGHT_FUNGUS, "Blight Fungus");
         addBlock(CharredBlocks.BLIGHT_STEM, "Blight Stem");

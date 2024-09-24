@@ -32,6 +32,7 @@ public class CharredCreativeTabs {
         out.accept(CharredItems.MYSTERIOUS_CHARM.get());
         out.accept(CharredItems.WITHERED_SWORD.get());
         out.accept(CharredItems.BLAZE_SLAYER.get());
+        out.accept(CharredBlocks.BLIGHT_ROOT.get());
         out.accept(CharredBlocks.BLIGHT_FUNGUS.get());
         out.accept(CharredBlocks.WITHERED_FUNGUS.get());
     }

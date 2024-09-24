@@ -30,6 +30,7 @@ public class CharredItemModelProvider extends ItemModelProvider {
         handheld(CharredItems.BLAZE_SLAYER.get());
         handheld(CharredItems.WITHERED_SWORD.get());
 
+        basicItemBlock(CharredBlocks.BLIGHT_ROOT.get());
         basicItemBlock(CharredBlocks.BLIGHT_FUNGUS.get());
         basicItemBlock(CharredBlocks.WITHERED_FUNGUS.get());
 

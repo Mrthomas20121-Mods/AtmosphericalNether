@@ -6,22 +6,29 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FungusBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraftforge.registries.DeferredRegister;
 
 public class CharredConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLIGHT_FUNGUS = createKey("blight_fungus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLIGHT_FUNGUS_PLANTED = createKey("blight_fungus_planted");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLIGHT_VEGETATION = createKey("blight_vegetation");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> WITHERED_FUNGUS = createKey("withered_fungus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WITHERED_FUNGUS_PLANTED = createKey("withered_fungus_planted");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WITHERED_VEGETATION = createKey("withered_vegetation");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String p_255643_) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
@@ -34,6 +41,11 @@ public class CharredConfiguredFeatures {
         register(context, BLIGHT_FUNGUS_PLANTED, Feature.HUGE_FUNGUS, new HugeFungusConfiguration(CharredBlocks.BLIGHT_NYLIUM.get().defaultBlockState(), CharredBlocks.BLIGHT_STEM.get().defaultBlockState(), CharredBlocks.BLIGHT_NETHER_WART.get().defaultBlockState(), CharredBlocks.EXOTIC_SHROOMLIGHT.get().defaultBlockState(), blockpredicate, true));
         register(context, WITHERED_FUNGUS, Feature.HUGE_FUNGUS, new HugeFungusConfiguration(CharredBlocks.WITHERED_NYLIUM.get().defaultBlockState(), CharredBlocks.WITHERED_STEM.get().defaultBlockState(), CharredBlocks.WITHERED_NETHER_WART.get().defaultBlockState(), CharredBlocks.EXOTIC_SHROOMLIGHT.get().defaultBlockState(), blockpredicate, false));
         register(context, WITHERED_FUNGUS_PLANTED, Feature.HUGE_FUNGUS, new HugeFungusConfiguration(CharredBlocks.WITHERED_NYLIUM.get().defaultBlockState(), CharredBlocks.WITHERED_STEM.get().defaultBlockState(), CharredBlocks.WITHERED_NETHER_WART.get().defaultBlockState(), CharredBlocks.EXOTIC_SHROOMLIGHT.get().defaultBlockState(), blockpredicate, true));
+
+        WeightedStateProvider weightedstateprovider = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(CharredBlocks.BLIGHT_ROOT.get().defaultBlockState(), 87).add(CharredBlocks.BLIGHT_FUNGUS.get().defaultBlockState(), 11).add(CharredBlocks.WITHERED_FUNGUS.get().defaultBlockState(), 1));
+
+        register(context, BLIGHT_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationConfig(weightedstateprovider, 8, 4));
+        register(context, WITHERED_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationConfig(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.WITHER_ROSE.defaultBlockState(), 87).add(CharredBlocks.WITHERED_FUNGUS.get().defaultBlockState(), 1)), 8, 4));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

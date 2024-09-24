@@ -5,6 +5,8 @@ import mrthomas20121.charred_horizons.block.CharredNyliumBlock;
 import mrthomas20121.charred_horizons.block.sign.*;
 import mrthomas20121.charred_horizons.data.CharredConfiguredFeatures;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -24,6 +26,7 @@ public class CharredBlocks {
     public static RegistryObject<Block> EXOTIC_SHROOMLIGHT = register("exotic_shroomlight", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.0F).sound(SoundType.SHROOMLIGHT).lightLevel((p_187431_) -> 15)));
     public static RegistryObject<Block> BLIGHT_NYLIUM = register("blight_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
     public static RegistryObject<FungusBlock> BLIGHT_FUNGUS = register("blight_fungus", () -> new FungusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().strength(0.4F).sound(SoundType.NYLIUM), CharredConfiguredFeatures.BLIGHT_FUNGUS_PLANTED, BLIGHT_NYLIUM.get()));
+    public static RegistryObject<RootsBlock> BLIGHT_ROOT = register("blight_root", () -> new RootsBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_ROOTS).mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().strength(0.4F).sound(SoundType.NYLIUM)));
     public static RegistryObject<Block> BLIGHT_NETHER_WART = register("blight_nether_wart", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
     public static RegistryObject<RotatedPillarBlock> BLIGHT_STEM = register("blight_stem", () -> netherStem(MapColor.TERRACOTTA_ORANGE));
     public static RegistryObject<Block> BLIGHT_HYPHAE = register("blight_hyphae", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HYPHAE).mapColor(MapColor.TERRACOTTA_ORANGE)));
@@ -42,7 +45,7 @@ public class CharredBlocks {
     public static RegistryObject<BlightWallSignBlock> BLIGHT_WALL_SIGN = registerNoItem("blight_wall_sign", () -> new BlightWallSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_SIGN).mapColor(MapColor.TERRACOTTA_ORANGE), CharredWoodTypes.BLIGHT));
     public static RegistryObject<BlightWallHangingSignBlock> BLIGHT_WALL_HANGING_SIGN = registerNoItem("blight_wall_hanging_sign", () -> new BlightWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_ORANGE), CharredWoodTypes.BLIGHT));
     public static RegistryObject<BlightCeilingHangingSignBlock> BLIGHT_HANGING_SIGN = registerNoItem("blight_hanging_sign", () -> new BlightCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_ORANGE), CharredWoodTypes.BLIGHT));
-    public static RegistryObject<Block> WITHERED_NYLIUM = register("withered_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
+    public static RegistryObject<Block> WITHERED_NYLIUM = register("withered_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).instrument(NoteBlockInstrument.BASEDRUM).isValidSpawn((state, getter, pos, entity) -> entity.is(EntityTypeTags.SKELETONS) || entity.equals(EntityType.HUSK)).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
     public static RegistryObject<FungusBlock> WITHERED_FUNGUS = register("withered_fungus", () -> new FungusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).noCollission().strength(0.4F).sound(SoundType.NYLIUM), CharredConfiguredFeatures.WITHERED_FUNGUS_PLANTED, WITHERED_NYLIUM.get()));
     public static RegistryObject<Block> WITHERED_NETHER_WART = register("withered_nether_wart", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
     public static RegistryObject<RotatedPillarBlock> WITHERED_STEM = register("withered_stem", () -> netherStem(MapColor.TERRACOTTA_BLACK));

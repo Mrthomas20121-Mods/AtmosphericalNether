@@ -29,6 +29,7 @@ public class CharredClient {
     public static void clientInit(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             RenderType cutout = RenderType.cutout();
+            ItemBlockRenderTypes.setRenderLayer(CharredBlocks.BLIGHT_ROOT.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(CharredBlocks.BLIGHT_FUNGUS.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(CharredBlocks.WITHERED_FUNGUS.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(CharredBlocks.BLIGHT_TRAPDOOR.get(), cutout);
