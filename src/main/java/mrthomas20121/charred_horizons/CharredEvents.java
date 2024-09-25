@@ -1,7 +1,9 @@
 package mrthomas20121.charred_horizons;
 
 import mrthomas20121.charred_horizons.data.CharredBiomes;
+import mrthomas20121.charred_horizons.entity.SulfuricSkeleton;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
+import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.RandomSource;
@@ -18,6 +20,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,19 +48,29 @@ public class CharredEvents {
                         }
                     }
                 }
+                if (!event.isCanceled() && level.getBiome(event.getEntity().getOnPos()).is(CharredBiomes.DESOLATED_FOREST)) {
+                    if(event.getEntity().getType().equals(EntityType.PIGLIN)) {
+                        event.getEntity().setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_AXE));
+                    }
+                }
             }
         }
     }
 
     @Mod.EventBusSubscriber(modid = CharredHorizons.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEvents {
+
         @SubscribeEvent
         public static void registerEntityPlacement(SpawnPlacementRegisterEvent event) {
             event.register(EntityType.WITHER_SKELETON, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    WitherSkeleton::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-            event.register(EntityType.PIGLIN_BRUTE, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Piglin::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+                    WitherSkeleton::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
             event.register(EntityType.PIGLIN, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Piglin::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-            event.register(EntityType.HUSK, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Husk::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+            event.register(CharredEntityTypes.SULFURIC_SKELETON.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SulfuricSkeleton::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        }
+
+        @SubscribeEvent
+        public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
+            event.put(CharredEntityTypes.SULFURIC_SKELETON.get(), SulfuricSkeleton.createAttributes().build());
         }
     }
 }

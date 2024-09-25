@@ -54,12 +54,12 @@
   ],
   "has_precipitation": false,
   "spawn_costs": {
-    "minecraft:husk": {
-      "charge": 0.5,
+    "minecraft:strider": {
+      "charge": 0.7,
       "energy_budget": 0.15
     },
     "minecraft:wither_skeleton": {
-      "charge": 0.5,
+      "charge": 0.7,
       "energy_budget": 0.15
     }
   },
@@ -68,18 +68,6 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:wither_skeleton",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 20
-      },
-      {
-        "type": "minecraft:husk",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 15
-      },
-      {
         "type": "minecraft:strider",
         "maxCount": 2,
         "minCount": 1,
@@ -87,7 +75,14 @@
       }
     ],
     "misc": [],
-    "monster": [],
+    "monster": [
+      {
+        "type": "minecraft:wither_skeleton",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 20
+      }
+    ],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []

@@ -15,6 +15,8 @@
   "block.charred_horizons.blight_stairs": "Blight Stairs",
   "block.charred_horizons.blight_stem": "Blight Stem",
   "block.charred_horizons.blight_trapdoor": "Blight Trapdoor",
+  "block.charred_horizons.drooping_vines": "Drooping Vines",
+  "block.charred_horizons.drooping_vines_plant": "Drooping Vines Plant",
   "block.charred_horizons.exotic_shroomlight": "Exotic Shroomlight",
   "block.charred_horizons.withered_button": "Withered Button",
   "block.charred_horizons.withered_door": "Withered Door",
@@ -33,10 +35,12 @@
   "block.charred_horizons.withered_trapdoor": "Withered Trapdoor",
   "creative_tab.charred_horizons.block": "Charred Horizons Blocks",
   "creative_tab.charred_horizons.item": "Charred Horizons Items",
+  "entity.charred_horizons.sulfuric_skeleton": "Sulfuric Skeleton",
   "item.charred_horizons.blaze_slayer": "Blaze Slayer",
   "item.charred_horizons.blight_ring": "Blight Ring",
   "item.charred_horizons.gold_ring": "Gold Ring",
   "item.charred_horizons.mysterious_charm": "Mysterious Charm",
   "item.charred_horizons.netherite_ring.effect": "Piglins become neutral.",
+  "item.charred_horizons.sulfuric_skeleton_egg": "Sulfuric Skeleton Spawn Egg",
   "item.charred_horizons.withered_sword": "Withered Sword"
 }

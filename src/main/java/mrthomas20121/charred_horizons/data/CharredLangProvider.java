@@ -2,6 +2,7 @@ package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
+import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -16,7 +17,11 @@ public class CharredLangProvider extends LanguageProvider {
     protected void addTranslations() {
         add("creative_tab.charred_horizons.block", "Charred Horizons Blocks");
         add("creative_tab.charred_horizons.item", "Charred Horizons Items");
+
+        addEntityType(CharredEntityTypes.SULFURIC_SKELETON, "Sulfuric Skeleton");
         addBlock(CharredBlocks.EXOTIC_SHROOMLIGHT, "Exotic Shroomlight");
+        addBlock(CharredBlocks.DROOPING_VINES, "Drooping Vines");
+        addBlock(CharredBlocks.DROOPING_VINES_PLANT, "Drooping Vines Plant");
         addBlock(CharredBlocks.BLIGHT_ROOT, "Blight Root");
         addBlock(CharredBlocks.BLIGHT_NYLIUM, "Blight Nylium");
         addBlock(CharredBlocks.BLIGHT_FUNGUS, "Blight Fungus");
@@ -56,6 +61,7 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.GOLD_RING, "Gold Ring");
         addItem(CharredItems.BLAZE_SLAYER, "Blaze Slayer");
         addItem(CharredItems.WITHERED_SWORD, "Withered Sword");
+        addItem(CharredItems.SULFURIC_SKELETON_EGG, "Sulfuric Skeleton Spawn Egg");
         add("item.charred_horizons.netherite_ring.effect", "Piglins become neutral.");
     }
 }

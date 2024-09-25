@@ -23,6 +23,8 @@ public class CharredItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        withExistingParent(itemName(CharredItems.SULFURIC_SKELETON_EGG.get()), "minecraft:item/template_spawn_egg");
+
         basicItem(CharredItems.GOLD_RING.get());
         basicItem(CharredItems.BLIGHT_RING.get());
         basicItem(CharredItems.MYSTERIOUS_CHARM.get());
@@ -30,6 +32,8 @@ public class CharredItemModelProvider extends ItemModelProvider {
         handheld(CharredItems.BLAZE_SLAYER.get());
         handheld(CharredItems.WITHERED_SWORD.get());
 
+
+        basicItemBlock(CharredBlocks.DROOPING_VINES.get(), CharredBlocks.DROOPING_VINES_PLANT.get());
         basicItemBlock(CharredBlocks.BLIGHT_ROOT.get());
         basicItemBlock(CharredBlocks.BLIGHT_FUNGUS.get());
         basicItemBlock(CharredBlocks.WITHERED_FUNGUS.get());
@@ -90,9 +94,14 @@ public class CharredItemModelProvider extends ItemModelProvider {
                 .texture("layer0", new ResourceLocation(loc.getNamespace(), "item/" + loc.getPath()));
     }
 
-    public ItemModelBuilder basicItemBlock(Block item)
+    public ItemModelBuilder basicItemBlock(Block block)
     {
-        return basicItemBlock(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(item)));
+        return basicItemBlock(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)));
+    }
+
+    public ItemModelBuilder basicItemBlock(Block block, Block block2)
+    {
+        return basicItemBlock(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)), Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block2)));
     }
 
     public ItemModelBuilder basicItemBlock(ResourceLocation item)
@@ -102,12 +111,28 @@ public class CharredItemModelProvider extends ItemModelProvider {
                 .texture("layer0", new ResourceLocation(item.getNamespace(), "block/" + item.getPath()));
     }
 
+    public ItemModelBuilder basicItemBlock(ResourceLocation block, ResourceLocation block2)
+    {
+        return getBuilder(block.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/generated"))
+                .texture("layer0", new ResourceLocation(block2.getNamespace(), "block/" + block2.getPath()));
+    }
+
     public String blockName(Block block) {
         ResourceLocation location = ForgeRegistries.BLOCKS.getKey(block);
         if (location != null) {
             return location.getPath();
         } else {
             throw new IllegalStateException("Unknown block: " + block.toString());
+        }
+    }
+
+    public String itemName(Item block) {
+        ResourceLocation location = ForgeRegistries.ITEMS.getKey(block);
+        if (location != null) {
+            return location.getPath();
+        } else {
+            throw new IllegalStateException("Unknown item: " + block.toString());
         }
     }
 }

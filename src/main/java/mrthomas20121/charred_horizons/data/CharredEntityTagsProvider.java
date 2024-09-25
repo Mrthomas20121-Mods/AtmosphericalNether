@@ -1,10 +1,12 @@
 package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
+import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import mrthomas20121.charred_horizons.init.CharredTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -20,5 +22,7 @@ public class CharredEntityTagsProvider extends EntityTypeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider p_255894_) {
         tag(CharredTags.Entities.BLAZES).add(EntityType.BLAZE);
+
+        tag(EntityTypeTags.SKELETONS).add(CharredEntityTypes.SULFURIC_SKELETON.get());
     }
 }

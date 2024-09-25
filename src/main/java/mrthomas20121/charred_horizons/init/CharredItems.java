@@ -3,10 +3,8 @@ package mrthomas20121.charred_horizons.init;
 import mrthomas20121.charred_horizons.CharredHorizons;
 import mrthomas20121.charred_horizons.item.*;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -25,4 +23,7 @@ public class CharredItems {
     public static RegistryObject<MysteriousCharmItem> MYSTERIOUS_CHARM = ITEMS.register("mysterious_charm", () -> new MysteriousCharmItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static RegistryObject<WitheredSwordItem> WITHERED_SWORD = ITEMS.register("withered_sword", WitheredSwordItem::new);
     public static RegistryObject<BlazeSlayerItem> BLAZE_SLAYER = ITEMS.register("blaze_slayer", BlazeSlayerItem::new);
+
+    public static RegistryObject<ForgeSpawnEggItem> SULFURIC_SKELETON_EGG = ITEMS.register("sulfuric_skeleton_egg",
+            () -> new ForgeSpawnEggItem(CharredEntityTypes.SULFURIC_SKELETON, 0x1D2121, 0x1D2121, new Item.Properties()));
 }

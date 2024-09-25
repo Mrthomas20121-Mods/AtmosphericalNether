@@ -1,10 +1,7 @@
 package mrthomas20121.charred_horizons;
 
 import mrthomas20121.charred_horizons.data.CharredDatagen;
-import mrthomas20121.charred_horizons.init.CharredBlockEntities;
-import mrthomas20121.charred_horizons.init.CharredBlocks;
-import mrthomas20121.charred_horizons.init.CharredCreativeTabs;
-import mrthomas20121.charred_horizons.init.CharredItems;
+import mrthomas20121.charred_horizons.init.*;
 import mrthomas20121.charred_horizons.worldgen.CharredRegion;
 import mrthomas20121.charred_horizons.worldgen.CharredSurfaceData;
 import net.minecraft.resources.ResourceLocation;
@@ -27,6 +24,8 @@ public class CharredHorizons {
 		CharredBlocks.BLOCKS.register(bus);
 		CharredBlockEntities.BLOCK_ENTITY_TYPES.register(bus);
 		CharredCreativeTabs.CREATIVE_TABS.register(bus);
+		CharredEntityTypes.ENTITY_TYPES.register(bus);
+		CharredFeatures.FEATURES.register(bus);
 
 		bus.addListener(CharredDatagen::init);
 		bus.addListener(this::setup);

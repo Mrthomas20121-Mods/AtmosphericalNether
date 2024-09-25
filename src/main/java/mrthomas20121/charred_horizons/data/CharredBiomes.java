@@ -1,6 +1,7 @@
 package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
+import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -48,7 +49,7 @@ public class CharredBiomes {
                 new BiomeSpecialEffects.Builder()
                         .waterColor(4159204)
                         .waterFogColor(329011)
-                        .fogColor(16765303)
+                        .fogColor(16762482)
                         .skyColor(calculateSkyColor(2.0F))
                         .ambientParticle(new AmbientParticleSettings(ParticleTypes.SPORE_BLOSSOM_AIR, 0.00625F))
                         .ambientLoopSound(SoundEvents.AMBIENT_CRIMSON_FOREST_LOOP)
@@ -56,11 +57,13 @@ public class CharredBiomes {
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CRIMSON_FOREST))
                         .build(),
                 new MobSpawnSettings.Builder()
-                        .addMobCharge(EntityType.PIGLIN_BRUTE, 0.5, 0.15)
                         .addMobCharge(EntityType.PIGLIN, 0.5, 0.15)
+                        .addMobCharge(CharredEntityTypes.SULFURIC_SKELETON.get(), 0.5, 0.15)
+                        .addMobCharge(EntityType.GHAST, 0.5, 0.15)
                         .addMobCharge(EntityType.STRIDER, 0.5, 0.12)
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.PIGLIN_BRUTE, 20, 1, 1))
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.PIGLIN, 20, 1, 2))
+                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 50, 4, 4))
+                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SULFURIC_SKELETON.get(), 5, 3, 4))
+                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.PIGLIN, 10, 2, 3))
                         .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2))
                         .build(),
                 new BiomeGenerationSettings.Builder(placedFeatureHolderGetter, configuredWorldCarverHolderGetter)
@@ -95,10 +98,9 @@ public class CharredBiomes {
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SOUL_SAND_VALLEY))
                         .build(),
                 new MobSpawnSettings.Builder()
-                        .addMobCharge(EntityType.WITHER_SKELETON, 0.5, 0.15)
-                        .addMobCharge(EntityType.HUSK, 0.5, 0.15)
-                        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WITHER_SKELETON, 20, 1, 3))
-                        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 15, 1, 2))
+                        .addMobCharge(EntityType.WITHER_SKELETON, 0.7, 0.15)
+                        .addMobCharge(EntityType.STRIDER, 0.7, 0.15)
+                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITHER_SKELETON, 20, 1, 3))
                         .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2))
                         .build(),
                 new BiomeGenerationSettings.Builder(placedFeatureHolderGetter, configuredWorldCarverHolderGetter)

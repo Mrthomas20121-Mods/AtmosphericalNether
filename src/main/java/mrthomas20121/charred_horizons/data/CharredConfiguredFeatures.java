@@ -2,6 +2,7 @@ package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
+import mrthomas20121.charred_horizons.init.CharredFeatures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -30,6 +31,8 @@ public class CharredConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> WITHERED_VEGETATION = createKey("withered_vegetation");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DROOPING_VINES = createKey("drooping_vines");
+
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String p_255643_) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
     }
@@ -46,6 +49,8 @@ public class CharredConfiguredFeatures {
 
         register(context, BLIGHT_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationConfig(weightedstateprovider, 8, 4));
         register(context, WITHERED_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationConfig(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.WITHER_ROSE.defaultBlockState(), 87).add(CharredBlocks.WITHERED_FUNGUS.get().defaultBlockState(), 1)), 8, 4));
+
+        register(context, DROOPING_VINES, CharredFeatures.DROOPING_VINES.get(), FeatureConfiguration.NONE);
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

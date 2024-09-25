@@ -2,6 +2,8 @@ package mrthomas20121.charred_horizons.init;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
 import mrthomas20121.charred_horizons.block.CharredNyliumBlock;
+import mrthomas20121.charred_horizons.block.DroopingVineBlock;
+import mrthomas20121.charred_horizons.block.DroopingVinePlantBlock;
 import mrthomas20121.charred_horizons.block.sign.*;
 import mrthomas20121.charred_horizons.data.CharredConfiguredFeatures;
 import net.minecraft.core.registries.Registries;
@@ -28,6 +30,8 @@ public class CharredBlocks {
     public static RegistryObject<FungusBlock> BLIGHT_FUNGUS = register("blight_fungus", () -> new FungusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().strength(0.4F).sound(SoundType.NYLIUM), CharredConfiguredFeatures.BLIGHT_FUNGUS_PLANTED, BLIGHT_NYLIUM.get()));
     public static RegistryObject<RootsBlock> BLIGHT_ROOT = register("blight_root", () -> new RootsBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_ROOTS).mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().strength(0.4F).sound(SoundType.NYLIUM)));
     public static RegistryObject<Block> BLIGHT_NETHER_WART = register("blight_nether_wart", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
+    public static RegistryObject<DroopingVineBlock> DROOPING_VINES = register("drooping_vines", () -> new DroopingVineBlock(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES).mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
+    public static RegistryObject<DroopingVinePlantBlock> DROOPING_VINES_PLANT = registerNoItem("drooping_vines_plant", () -> new DroopingVinePlantBlock(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES_PLANT).mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
     public static RegistryObject<RotatedPillarBlock> BLIGHT_STEM = register("blight_stem", () -> netherStem(MapColor.TERRACOTTA_ORANGE));
     public static RegistryObject<Block> BLIGHT_HYPHAE = register("blight_hyphae", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HYPHAE).mapColor(MapColor.TERRACOTTA_ORANGE)));
     public static RegistryObject<RotatedPillarBlock> STRIPPED_BLIGHT_STEM = register("stripped_blight_stem", () -> netherStem(MapColor.TERRACOTTA_ORANGE));

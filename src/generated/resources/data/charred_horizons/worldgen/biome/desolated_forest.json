@@ -5,7 +5,7 @@
   "downfall": 0.0,
   "effects": {
     "ambient_sound": "minecraft:ambient.crimson_forest.loop",
-    "fog_color": 16765303,
+    "fog_color": 16762482,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -54,11 +54,15 @@
   ],
   "has_precipitation": false,
   "spawn_costs": {
-    "minecraft:piglin": {
+    "charred_horizons:sulfuric_skeleton": {
       "charge": 0.5,
       "energy_budget": 0.15
     },
-    "minecraft:piglin_brute": {
+    "minecraft:ghast": {
+      "charge": 0.5,
+      "energy_budget": 0.15
+    },
+    "minecraft:piglin": {
       "charge": 0.5,
       "energy_budget": 0.15
     },
@@ -81,16 +85,22 @@
     "misc": [],
     "monster": [
       {
-        "type": "minecraft:piglin_brute",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 20
+        "type": "minecraft:ghast",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 50
+      },
+      {
+        "type": "charred_horizons:sulfuric_skeleton",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 5
       },
       {
         "type": "minecraft:piglin",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 20
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 10
       }
     ],
     "underground_water_creature": [],

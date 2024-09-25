@@ -22,6 +22,12 @@ public class CharredBlockstateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         simpleBlock(CharredBlocks.EXOTIC_SHROOMLIGHT.get());
 
+        simpleBlock(CharredBlocks.DROOPING_VINES.get(), models().cross(CharredHorizons.MOD_ID+":drooping_vines",
+                blockTexture(CharredBlocks.DROOPING_VINES.get())));
+
+        simpleBlock(CharredBlocks.DROOPING_VINES_PLANT.get(), models().cross(CharredHorizons.MOD_ID+":drooping_vines_plant",
+                blockTexture(CharredBlocks.DROOPING_VINES_PLANT.get())));
+
         simpleBlock(CharredBlocks.BLIGHT_ROOT.get(), models().cross(CharredHorizons.MOD_ID+":blight_root",
                 blockTexture(CharredBlocks.BLIGHT_ROOT.get())));
 
