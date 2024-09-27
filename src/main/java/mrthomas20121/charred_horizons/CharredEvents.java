@@ -3,25 +3,32 @@ package mrthomas20121.charred_horizons;
 import mrthomas20121.charred_horizons.data.CharredBiomes;
 import mrthomas20121.charred_horizons.entity.FierySpider;
 import mrthomas20121.charred_horizons.entity.SulfuricSkeleton;
+import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Ghast;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -68,6 +75,13 @@ public class CharredEvents {
                 if (event.getSource().getDirectEntity().getType().equals(CharredEntityTypes.FIERY_SPIDER.get())) {
                     event.getEntity().setSecondsOnFire(100);
                 }
+        }
+
+        @SubscribeEvent
+        public static void onGrowth(BlockEvent.CropGrowEvent.Pre event) {
+            if(event.getLevel().getBlockState(event.getPos().below()).is(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get())) {
+                event.setResult(Event.Result.ALLOW);
+            }
         }
     }
 

@@ -7,6 +7,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,14 +25,24 @@ public class ImprovedFarmlandBlock extends FarmBlock {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        super.tick(state, level, pos, random);
+    public boolean canSurvive(BlockState p_53272_, LevelReader p_53273_, BlockPos p_53274_) {
+        return true;
+    }
+
+    @Override
+    public boolean isFertile(BlockState state, BlockGetter level, BlockPos pos) {
+        return true;
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 
         BlockPos above = pos.above();
-        if(random.nextFloat() > 0.5f && level.getBlockState(above) instanceof BonemealableBlock) {
-            level.getBlockState(above).randomTick(level, above, random);
-
-            level.scheduleTick(above, this, random.nextInt(10));
+        BlockState aboveState = level.getBlockState(above);
+        if(aboveState.getBlock() instanceof IPlantable && aboveState.isRandomlyTicking()) {
+            for(int i = 0; i<5; i++) {
+                aboveState.randomTick(level, above, random);
+            }
         }
     }
 

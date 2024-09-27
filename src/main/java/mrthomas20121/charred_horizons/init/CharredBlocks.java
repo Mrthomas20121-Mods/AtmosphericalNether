@@ -26,7 +26,7 @@ public class CharredBlocks {
 
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, CharredHorizons.MOD_ID);
 
-    public static RegistryObject<ImprovedFarmlandBlock> IMPROVED_FARMLAND_BLOCK = register("improved_farmland", () -> new ImprovedFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND)));
+    public static RegistryObject<ImprovedFarmlandBlock> IMPROVED_FARMLAND_BLOCK = register("improved_farmland", () -> new ImprovedFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND).randomTicks()));
     public static RegistryObject<Block> EXOTIC_SHROOMLIGHT = register("exotic_shroomlight", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.0F).sound(SoundType.SHROOMLIGHT).lightLevel((p_187431_) -> 15)));
     public static RegistryObject<Block> BLIGHT_NYLIUM = register("blight_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().isValidSpawn((state, getter, pos, entity) -> entity.is(EntityTypeTags.SKELETONS) || entity.equals(EntityType.PIGLIN)).mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
     public static RegistryObject<FungusBlock> BLIGHT_FUNGUS = register("blight_fungus", () -> new FungusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().strength(0.4F).sound(SoundType.NYLIUM), CharredConfiguredFeatures.BLIGHT_FUNGUS_PLANTED, BLIGHT_NYLIUM.get()));
