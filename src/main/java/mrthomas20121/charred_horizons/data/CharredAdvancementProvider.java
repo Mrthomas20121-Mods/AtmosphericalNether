@@ -59,7 +59,7 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, false, false, false)
                 .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get()))
-                .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_bow"), existingFileHelper);
+                .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "improved_farmland"), existingFileHelper);
 
         Advancement FIERY_SPIDER = Advancement.Builder.advancement()
                 .display(CharredItems.FIERY_STRING.get(),

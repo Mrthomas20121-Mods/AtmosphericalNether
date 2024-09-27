@@ -21,9 +21,9 @@ public class CharredBlockstateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        simpleBlock(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get(), models().cubeTop("improved_farmland",
-                new ResourceLocation(CharredHorizons.MOD_ID, "block/improved_farmland"),
-                new ResourceLocation(CharredHorizons.MOD_ID, "block/improved_dirt")));
+        farmland(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get(),
+                new ResourceLocation(CharredHorizons.MOD_ID, "block/improved_dirt"),
+                new ResourceLocation(CharredHorizons.MOD_ID, "block/improved_farmland"));
         simpleBlock(CharredBlocks.EXOTIC_SHROOMLIGHT.get());
 
         simpleBlock(CharredBlocks.DROOPING_VINES.get(), models().cross(CharredHorizons.MOD_ID+":drooping_vines",
@@ -111,6 +111,12 @@ public class CharredBlockstateProvider extends BlockStateProvider {
 
     private String name(Block block) {
         return key(block).getPath();
+    }
+
+    public void farmland(Block block, ResourceLocation side, ResourceLocation top) {
+        simpleBlock(block, models().withExistingParent(name(block),  "block/template_farmland")
+                .texture("dirt", side)
+                .texture("top", top));
     }
 
     private void hyphae(Block block, ResourceLocation location) {

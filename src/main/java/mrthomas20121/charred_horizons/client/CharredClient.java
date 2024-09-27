@@ -73,6 +73,7 @@ public class CharredClient {
 
             RenderType cutout = RenderType.cutout();
 
+            ItemBlockRenderTypes.setRenderLayer(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get(), RenderType.cutoutMipped());
             ItemBlockRenderTypes.setRenderLayer(CharredBlocks.DROOPING_VINES.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(CharredBlocks.DROOPING_VINES_PLANT.get(), cutout);
 

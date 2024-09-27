@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "minecraft:dirt"
+    },
+    "M": {
+      "item": "charred_horizons:sulfuric_bone_meal"
+    },
+    "S": {
+      "tag": "forge:dusts/sulfur"
+    }
+  },
+  "pattern": [
+    "SMS",
+    "MDM",
+    "SMS"
+  ],
+  "result": {
+    "item": "charred_horizons:improved_farmland"
+  },
+  "show_notification": true
+}

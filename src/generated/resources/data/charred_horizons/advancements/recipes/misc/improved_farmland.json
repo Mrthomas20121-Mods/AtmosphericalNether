@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fiery_string": {
+    "has_sulfur_dust": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "charred_horizons:fiery_string"
-            ]
+            "tag": "forge:dusts/sulfur"
           }
         ]
       },
@@ -15,20 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bow"
+        "recipe": "charred_horizons:improved_farmland"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_fiery_string",
+      "has_sulfur_dust",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bow"
+      "charred_horizons:improved_farmland"
     ]
   },
   "sends_telemetry_event": false

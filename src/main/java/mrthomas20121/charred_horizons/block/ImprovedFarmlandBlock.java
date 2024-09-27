@@ -24,7 +24,7 @@ public class ImprovedFarmlandBlock extends FarmBlock {
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         super.tick(state, level, pos, random);
 
         BlockPos above = pos.above();

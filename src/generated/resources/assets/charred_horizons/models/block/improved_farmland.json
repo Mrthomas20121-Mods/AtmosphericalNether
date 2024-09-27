@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "charred_horizons:block/improved_dirt",
+    "top": "charred_horizons:block/improved_farmland"
+  }
+}
