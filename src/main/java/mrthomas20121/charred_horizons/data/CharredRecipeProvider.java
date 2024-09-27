@@ -1,13 +1,16 @@
 package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.init.CharredBlocks;
+import mrthomas20121.charred_horizons.init.CharredItems;
 import mrthomas20121.charred_horizons.init.CharredTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -62,6 +65,11 @@ public class CharredRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(B), has(B)).save(consumer);
         fenceGateBuilder(CharredBlocks.WITHERED_FENCE_GATE.get(), i(W))
                 .unlockedBy(getHasName(W), has(W)).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.BOW)
+                .define('#', Items.GOLD_INGOT).define('X', CharredItems.FIERY_STRING.get())
+                .pattern(" #X").pattern("# X").pattern(" #X")
+                .unlockedBy("has_fiery_string", has(CharredItems.FIERY_STRING.get())).save(consumer);
     }
 
     private Ingredient i(ItemLike itemLike) {

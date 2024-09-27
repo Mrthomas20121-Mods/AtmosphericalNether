@@ -10,6 +10,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,6 +27,9 @@ public class CharredItemTagProvider extends ItemTagsProvider {
 
         tag(CharredTags.Items.CURIO_RING).add(CharredItems.GOLD_RING.get(), CharredItems.BLIGHT_RING.get());
         tag(CharredTags.Items.CURIO_CHARM).add(CharredItems.MYSTERIOUS_CHARM.get());
+
+        tag(Tags.Items.STRING).add(CharredItems.FIERY_STRING.get());
+        tag(Tags.Items.TOOLS_BOWS).add(CharredItems.FIERY_BOW.get());
 
         tag(ItemTags.PLANKS)
                 .add(
