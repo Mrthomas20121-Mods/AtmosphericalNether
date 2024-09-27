@@ -31,7 +31,8 @@ public class SulfuricSkeleton extends AbstractSkeleton {
     protected AbstractArrow getArrow(ItemStack p_33846_, float p_33847_) {
         AbstractArrow abstractarrow = super.getArrow(p_33846_, p_33847_);
         if (abstractarrow instanceof Arrow) {
-            ((Arrow)abstractarrow).addEffect(new MobEffectInstance(MobEffects.POISON, 600));
+            abstractarrow.setSecondsOnFire(10);
+            ((Arrow)abstractarrow).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300));
         }
 
         return abstractarrow;

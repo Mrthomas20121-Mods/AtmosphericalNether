@@ -12,6 +12,8 @@ public class CharredModelLayers {
     public static final ModelLayerLocation SULFURIC_SKELETON_OUTER_ARMOR = registerOuterArmor("sulfuric_skeleton");
     public static final ModelLayerLocation SULFURIC_SKELETON_OUTER_LAYER = register("sulfuric_skeleton", "outer");
 
+    public static final ModelLayerLocation FIERY_SPIDER = register("fiery_spider");
+
     private static ModelLayerLocation registerInnerArmor(String name) {
         return register(name, "inner_armor");
     }

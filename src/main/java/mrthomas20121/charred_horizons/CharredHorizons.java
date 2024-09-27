@@ -26,6 +26,8 @@ public class CharredHorizons {
 		CharredCreativeTabs.CREATIVE_TABS.register(bus);
 		CharredEntityTypes.ENTITY_TYPES.register(bus);
 		CharredFeatures.FEATURES.register(bus);
+		CharredParticleTypes.PARTICLE_TYPES.register(bus);
+		CharredLootModifiers.LOOT_MODIFIERS.register(bus);
 
 		bus.addListener(CharredDatagen::init);
 		bus.addListener(this::setup);

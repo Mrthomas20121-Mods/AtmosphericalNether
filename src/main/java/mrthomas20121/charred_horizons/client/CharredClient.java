@@ -1,14 +1,19 @@
 package mrthomas20121.charred_horizons.client;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
+import mrthomas20121.charred_horizons.client.particle.BlightSporeProvider;
 import mrthomas20121.charred_horizons.client.renderer.CharredModelLayers;
+import mrthomas20121.charred_horizons.client.renderer.FierySpiderRenderer;
 import mrthomas20121.charred_horizons.client.renderer.SulfuricSkeletonRenderer;
+import mrthomas20121.charred_horizons.entity.FierySpider;
 import mrthomas20121.charred_horizons.init.CharredBlockEntities;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredEntityTypes;
+import mrthomas20121.charred_horizons.init.CharredParticleTypes;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.SkeletonModel;
+import net.minecraft.client.model.SpiderModel;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -17,12 +22,18 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = CharredHorizons.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CharredClient {
+
+    @SubscribeEvent
+    public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(CharredParticleTypes.BLIGHT_SPORE.get(), BlightSporeProvider::new);
+    }
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
@@ -33,6 +44,7 @@ public class CharredClient {
         event.registerBlockEntityRenderer(CharredBlockEntities.WITHERED_HANGING_SIGN.get(), HangingSignRenderer::new);
 
         event.registerEntityRenderer(CharredEntityTypes.SULFURIC_SKELETON.get(), SulfuricSkeletonRenderer::new);
+        event.registerEntityRenderer(CharredEntityTypes.FIERY_SPIDER.get(), FierySpiderRenderer::new);
     }
 
     @SubscribeEvent
@@ -40,6 +52,7 @@ public class CharredClient {
         LayerDefinition layerdefinition1 = LayerDefinition.create(HumanoidArmorModel.createBodyLayer(new CubeDeformation(1.0F)), 64, 32);
         LayerDefinition layerdefinition3 = LayerDefinition.create(HumanoidArmorModel.createBodyLayer(new CubeDeformation(0.5F)), 64, 32);
 
+        event.registerLayerDefinition(CharredModelLayers.FIERY_SPIDER, SpiderModel::createSpiderBodyLayer);
         event.registerLayerDefinition(CharredModelLayers.SULFURIC_SKELETON, SkeletonModel::createBodyLayer);
         event.registerLayerDefinition(CharredModelLayers.SULFURIC_SKELETON_INNER_ARMOR, () -> layerdefinition3);
         event.registerLayerDefinition(CharredModelLayers.SULFURIC_SKELETON_OUTER_ARMOR, () -> layerdefinition1);

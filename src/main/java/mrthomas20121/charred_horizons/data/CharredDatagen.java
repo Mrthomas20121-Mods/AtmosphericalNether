@@ -25,6 +25,8 @@ public class CharredDatagen {
         // can't get biome tags to work so i'm adding them manually
         //generator.addProvider(event.includeServer(), new CharredBiomeTagsProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeServer(), new CharredRegistrySets(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), CharredLootTableData.create(packOutput));
+        generator.addProvider(event.includeServer(), new CharredLootModifierProvider(packOutput));
 
         generator.addProvider(event.includeClient(), new CharredBlockstateProvider(packOutput, fileHelper));
         generator.addProvider(event.includeClient(), new CharredLangProvider(packOutput));

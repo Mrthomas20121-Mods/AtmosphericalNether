@@ -24,6 +24,7 @@ public class CharredItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(itemName(CharredItems.SULFURIC_SKELETON_EGG.get()), "minecraft:item/template_spawn_egg");
+        withExistingParent(itemName(CharredItems.FIERY_SPIDER_EGG.get()), "minecraft:item/template_spawn_egg");
 
         basicItem(CharredItems.GOLD_RING.get());
         basicItem(CharredItems.BLIGHT_RING.get());
@@ -71,15 +72,35 @@ public class CharredItemModelProvider extends ItemModelProvider {
         itemBlock(CharredBlocks.BLIGHT_FENCE_GATE.get());
         itemBlock(CharredBlocks.WITHERED_FENCE_GATE.get());
 
-        itemBlock(CharredBlocks.BLIGHT_NETHER_WART.get());
-        itemBlock(CharredBlocks.WITHERED_NETHER_WART.get());
+        itemBlock(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get());
+        itemBlock(CharredBlocks.WITHERED_NETHER_WART_BLOCK.get());
 
         itemBlock(CharredBlocks.BLIGHT_STEM.get());
+        itemBlock(CharredBlocks.BLIGHT_HYPHAE.get());
+        itemBlock(CharredBlocks.STRIPPED_BLIGHT_STEM.get());
+        itemBlock(CharredBlocks.STRIPPED_BLIGHT_HYPHAE.get());
         itemBlock(CharredBlocks.WITHERED_STEM.get());
+        itemBlock(CharredBlocks.WITHERED_HYPHAE.get());
+        itemBlock(CharredBlocks.STRIPPED_WITHERED_STEM.get());
+        itemBlock(CharredBlocks.STRIPPED_WITHERED_HYPHAE.get());
+
+        basicItem(CharredItems.FIERY_STRING.get());
+        bowItem(CharredItems.FIERY_BOW.get());
     }
 
     public void itemBlock(Block block) {
         this.withExistingParent(this.blockName(block), modLoc("block/"+this.blockName(block)));
+    }
+
+    public void bowItem(Item item) {
+        this.withExistingParent(this.itemName(item) + "_pulling_0", this.mcLoc("item/bow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_0"));
+        this.withExistingParent(this.itemName(item) + "_pulling_1", this.mcLoc("item/bow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_1"));
+        this.withExistingParent(this.itemName(item) + "_pulling_2", this.mcLoc("item/bow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_2"));
+        this.withExistingParent(this.itemName(item), this.mcLoc("item/bow"))
+                .texture("layer0", this.modLoc("item/"+this.itemName(item)))
+                .override().predicate(new ResourceLocation("pulling"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_0"))).end()
+                .override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 0.65F).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_1"))).end()
+                .override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 0.9F).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_2"))).end();
     }
 
     public void trapdoorItem(Block block) {

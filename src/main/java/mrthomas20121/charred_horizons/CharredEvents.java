@@ -1,6 +1,7 @@
 package mrthomas20121.charred_horizons;
 
 import mrthomas20121.charred_horizons.data.CharredBiomes;
+import mrthomas20121.charred_horizons.entity.FierySpider;
 import mrthomas20121.charred_horizons.entity.SulfuricSkeleton;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredEntityTypes;
@@ -11,6 +12,7 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.piglin.Piglin;
@@ -23,6 +25,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -55,6 +58,13 @@ public class CharredEvents {
                 }
             }
         }
+
+        @SubscribeEvent
+        public static void itemUseTickEvent(LivingEntityUseItemEvent.Tick event) {
+            if (event.getItem().is(CharredItems.FIERY_BOW.get()) && event.getDuration() > event.getItem().getUseDuration() - 20) {
+                event.setDuration(event.getDuration() - 2);
+            }
+        }
     }
 
     @Mod.EventBusSubscriber(modid = CharredHorizons.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -66,11 +76,13 @@ public class CharredEvents {
                     WitherSkeleton::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
             event.register(EntityType.PIGLIN, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Piglin::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
             event.register(CharredEntityTypes.SULFURIC_SKELETON.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SulfuricSkeleton::checkAnyLightMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+            event.register(EntityType.GHAST, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Ghast::checkGhastSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         }
 
         @SubscribeEvent
         public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
             event.put(CharredEntityTypes.SULFURIC_SKELETON.get(), SulfuricSkeleton.createAttributes().build());
+            event.put(CharredEntityTypes.FIERY_SPIDER.get(), FierySpider.createAttributes().build());
         }
     }
 }

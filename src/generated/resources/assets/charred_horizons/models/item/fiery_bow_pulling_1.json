@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "charred_horizons:item/fiery_bow_pulling_1"
+  }
+}

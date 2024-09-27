@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:huge_fungus",
+  "type": "charred_horizons:huge_fungus",
   "config": {
     "decor_state": {
       "Name": "charred_horizons:exotic_shroomlight"

@@ -20,7 +20,7 @@
     },
     "particle": {
       "options": {
-        "type": "minecraft:spore_blossom_air"
+        "type": "charred_horizons:blight_spore"
       },
       "probability": 0.00625
     },
@@ -43,13 +43,20 @@
       "minecraft:brown_mushroom_nether",
       "minecraft:red_mushroom_nether",
       "minecraft:ore_magma",
-      "minecraft:ore_soul_sand"
+      "minecraft:ore_soul_sand",
+      "minecraft:ore_gravel_nether",
+      "minecraft:ore_blackstone",
+      "minecraft:ore_gold_nether",
+      "minecraft:ore_quartz_nether",
+      "minecraft:ore_ancient_debris_large",
+      "minecraft:ore_debris_small"
     ],
     [],
     [
       "minecraft:spring_lava",
       "charred_horizons:blight_fungus",
-      "charred_horizons:blight_vegetation"
+      "charred_horizons:blight_vegetation",
+      "charred_horizons:drooping_vines"
     ]
   ],
   "has_precipitation": false,
@@ -79,7 +86,7 @@
         "type": "minecraft:strider",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 60
+        "weight": 50
       }
     ],
     "misc": [],
@@ -88,13 +95,13 @@
         "type": "minecraft:ghast",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 50
+        "weight": 60
       },
       {
         "type": "charred_horizons:sulfuric_skeleton",
         "maxCount": 4,
         "minCount": 3,
-        "weight": 5
+        "weight": 10
       },
       {
         "type": "minecraft:piglin",

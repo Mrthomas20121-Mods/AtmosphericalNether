@@ -2,12 +2,10 @@ package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
-import mrthomas20121.charred_horizons.init.CharredItems;
 import mrthomas20121.charred_horizons.init.CharredTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -30,8 +28,8 @@ public class CharredBlockTagProvider extends BlockTagsProvider {
                 .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get());
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(
-                        CharredBlocks.BLIGHT_NETHER_WART.get(),
-                        CharredBlocks.WITHERED_NETHER_WART.get(),
+                        CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get(),
+                        CharredBlocks.WITHERED_NETHER_WART_BLOCK.get(),
                         CharredBlocks.EXOTIC_SHROOMLIGHT.get()
                 );
 

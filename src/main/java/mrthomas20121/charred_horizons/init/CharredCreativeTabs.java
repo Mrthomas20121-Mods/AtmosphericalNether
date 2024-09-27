@@ -27,20 +27,27 @@ public class CharredCreativeTabs {
     }
 
     public static void fillItemTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
+        out.accept(CharredItems.FIERY_STRING.get());
         out.accept(CharredItems.GOLD_RING.get());
         out.accept(CharredItems.BLIGHT_RING.get());
         out.accept(CharredItems.MYSTERIOUS_CHARM.get());
         out.accept(CharredItems.WITHERED_SWORD.get());
         out.accept(CharredItems.BLAZE_SLAYER.get());
+        out.accept(CharredItems.FIERY_BOW.get());
         out.accept(CharredBlocks.BLIGHT_ROOT.get());
         out.accept(CharredBlocks.BLIGHT_FUNGUS.get());
         out.accept(CharredBlocks.WITHERED_FUNGUS.get());
+        out.accept(CharredItems.SULFURIC_SKELETON_EGG.get());
+        out.accept(CharredItems.FIERY_SPIDER_EGG.get());
     }
 
     public static void fillBlockTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
         out.accept(CharredBlocks.BLIGHT_NYLIUM.get());
-        out.accept(CharredBlocks.BLIGHT_NETHER_WART.get());
+        out.accept(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get());
         out.accept(CharredBlocks.BLIGHT_STEM.get());
+        out.accept(CharredBlocks.BLIGHT_HYPHAE.get());
+        out.accept(CharredBlocks.STRIPPED_BLIGHT_STEM.get());
+        out.accept(CharredBlocks.STRIPPED_BLIGHT_HYPHAE.get());
         out.accept(CharredBlocks.BLIGHT_PLANKS.get());
         out.accept(CharredBlocks.BLIGHT_SLAB.get());
         out.accept(CharredBlocks.BLIGHT_STAIRS.get());
@@ -53,8 +60,11 @@ public class CharredCreativeTabs {
         out.accept(CharredBlocks.BLIGHT_HANGING_SIGN.get());
 
         out.accept(CharredBlocks.WITHERED_NYLIUM.get());
-        out.accept(CharredBlocks.WITHERED_NETHER_WART.get());
+        out.accept(CharredBlocks.WITHERED_NETHER_WART_BLOCK.get());
         out.accept(CharredBlocks.WITHERED_STEM.get());
+        out.accept(CharredBlocks.WITHERED_HYPHAE.get());
+        out.accept(CharredBlocks.STRIPPED_WITHERED_STEM.get());
+        out.accept(CharredBlocks.STRIPPED_WITHERED_HYPHAE.get());
         out.accept(CharredBlocks.WITHERED_PLANKS.get());
         out.accept(CharredBlocks.WITHERED_SLAB.get());
         out.accept(CharredBlocks.WITHERED_STAIRS.get());

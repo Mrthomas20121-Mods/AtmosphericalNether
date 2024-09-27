@@ -1,0 +1,52 @@
+{
+  "type": "charred_horizons:add_dungeon_loot",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/nether_bridge"
+    }
+  ],
+  "entries": [
+    {
+      "data": {
+        "Count": 1,
+        "id": "charred_horizons:mysterious_charm"
+      },
+      "weight": 1
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "charred_horizons:blight_ring"
+      },
+      "weight": 1
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "charred_horizons:blaze_slayer",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 1
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "charred_horizons:withered_sword",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 3
+    }
+  ],
+  "rolls": {
+    "type": "minecraft:uniform",
+    "value": {
+      "max_inclusive": 6,
+      "min_inclusive": 1
+    }
+  }
+}

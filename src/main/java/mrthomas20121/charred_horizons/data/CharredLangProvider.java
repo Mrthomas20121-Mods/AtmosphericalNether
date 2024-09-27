@@ -19,6 +19,7 @@ public class CharredLangProvider extends LanguageProvider {
         add("creative_tab.charred_horizons.item", "Charred Horizons Items");
 
         addEntityType(CharredEntityTypes.SULFURIC_SKELETON, "Sulfuric Skeleton");
+        addEntityType(CharredEntityTypes.FIERY_SPIDER, "Fiery Spider");
         addBlock(CharredBlocks.EXOTIC_SHROOMLIGHT, "Exotic Shroomlight");
         addBlock(CharredBlocks.DROOPING_VINES, "Drooping Vines");
         addBlock(CharredBlocks.DROOPING_VINES_PLANT, "Drooping Vines Plant");
@@ -48,8 +49,8 @@ public class CharredLangProvider extends LanguageProvider {
         addBlock(CharredBlocks.WITHERED_FENCE_GATE, "Withered Fence Gate");
         addBlock(CharredBlocks.WITHERED_PRESSURE_PLATE, "Withered Pressure Plate");
         addBlock(CharredBlocks.WITHERED_BUTTON, "Withered Button");
-        addBlock(CharredBlocks.WITHERED_NETHER_WART, "Withered Nether Wart");
-        addBlock(CharredBlocks.BLIGHT_NETHER_WART, "Blight Nether Wart");
+        addBlock(CharredBlocks.WITHERED_NETHER_WART_BLOCK, "Withered Nether Wart");
+        addBlock(CharredBlocks.BLIGHT_NETHER_WART_BLOCK, "Blight Nether Wart");
 
         addBlock(CharredBlocks.BLIGHT_SIGN, "Blight Sign");
         addBlock(CharredBlocks.BLIGHT_HANGING_SIGN, "Blight Hanging Sign");
@@ -60,8 +61,11 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.BLIGHT_RING, "Blight Ring");
         addItem(CharredItems.GOLD_RING, "Gold Ring");
         addItem(CharredItems.BLAZE_SLAYER, "Blaze Slayer");
-        addItem(CharredItems.WITHERED_SWORD, "Withered Sword");
+        addItem(CharredItems.WITHERED_SWORD, "Wither Skeleton Sword");
+        addItem(CharredItems.FIERY_STRING, "Fiery String");
+        addItem(CharredItems.FIERY_BOW, "Fiery Bow");
         addItem(CharredItems.SULFURIC_SKELETON_EGG, "Sulfuric Skeleton Spawn Egg");
+        addItem(CharredItems.FIERY_SPIDER_EGG, "Fiery Spider Spawn Egg");
         add("item.charred_horizons.netherite_ring.effect", "Piglins become neutral.");
     }
 }

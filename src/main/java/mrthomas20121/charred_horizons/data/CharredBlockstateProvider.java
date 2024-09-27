@@ -49,8 +49,8 @@ public class CharredBlockstateProvider extends BlockStateProvider {
                 new ResourceLocation("minecraft:block/netherrack"),
                 new ResourceLocation(CharredHorizons.MOD_ID, "block/withered_nylium")));
 
-        simpleBlock(CharredBlocks.BLIGHT_NETHER_WART.get());
-        simpleBlock(CharredBlocks.WITHERED_NETHER_WART.get());
+        simpleBlock(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get());
+        simpleBlock(CharredBlocks.WITHERED_NETHER_WART_BLOCK.get());
 
         simpleBlock(CharredBlocks.BLIGHT_PLANKS.get());
         simpleBlock(CharredBlocks.WITHERED_PLANKS.get());
@@ -58,8 +58,8 @@ public class CharredBlockstateProvider extends BlockStateProvider {
         logBlock(CharredBlocks.BLIGHT_STEM.get());
         logBlock(CharredBlocks.WITHERED_STEM.get());
 
-        hyphae(CharredBlocks.BLIGHT_HYPHAE.get(), new ResourceLocation("charred_horizons:block/blight_stem_top"));
-        hyphae(CharredBlocks.WITHERED_HYPHAE.get(), new ResourceLocation("charred_horizons:block/withered_stem_top"));
+        hyphae(CharredBlocks.BLIGHT_HYPHAE.get(), new ResourceLocation("charred_horizons:block/blight_stem"));
+        hyphae(CharredBlocks.WITHERED_HYPHAE.get(), new ResourceLocation("charred_horizons:block/withered_stem"));
 
         logBlock(CharredBlocks.STRIPPED_BLIGHT_STEM.get());
         logBlock(CharredBlocks.STRIPPED_WITHERED_STEM.get());

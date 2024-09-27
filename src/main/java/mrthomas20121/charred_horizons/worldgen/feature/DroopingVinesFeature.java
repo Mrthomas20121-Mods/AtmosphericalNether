@@ -30,7 +30,7 @@ public class DroopingVinesFeature extends Feature<NoneFeatureConfiguration> {
             return false;
         } else {
             BlockState blockstate = worldgenlevel.getBlockState(blockpos.above());
-            if (!blockstate.is(Blocks.NETHERRACK) && !blockstate.is(CharredBlocks.BLIGHT_NETHER_WART.get())) {
+            if (!blockstate.is(Blocks.NETHERRACK) && !blockstate.is(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get())) {
                 return false;
             } else {
                 this.placeRoofNetherWart(worldgenlevel, randomsource, blockpos);
@@ -41,7 +41,7 @@ public class DroopingVinesFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     private void placeRoofNetherWart(LevelAccessor p_225360_, RandomSource p_225361_, BlockPos p_225362_) {
-        p_225360_.setBlock(p_225362_, CharredBlocks.BLIGHT_NETHER_WART.get().defaultBlockState(), 2);
+        p_225360_.setBlock(p_225362_, CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get().defaultBlockState(), 2);
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos blockpos$mutableblockpos1 = new BlockPos.MutableBlockPos();
 
@@ -52,7 +52,7 @@ public class DroopingVinesFeature extends Feature<NoneFeatureConfiguration> {
 
                 for (Direction direction : DIRECTIONS) {
                     BlockState blockstate = p_225360_.getBlockState(blockpos$mutableblockpos1.setWithOffset(blockpos$mutableblockpos, direction));
-                    if (blockstate.is(Blocks.NETHERRACK) || blockstate.is(CharredBlocks.BLIGHT_NETHER_WART.get())) {
+                    if (blockstate.is(Blocks.NETHERRACK) || blockstate.is(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get())) {
                         ++j;
                     }
 
@@ -62,7 +62,7 @@ public class DroopingVinesFeature extends Feature<NoneFeatureConfiguration> {
                 }
 
                 if (j == 1) {
-                    p_225360_.setBlock(blockpos$mutableblockpos, CharredBlocks.BLIGHT_NETHER_WART.get().defaultBlockState(), 2);
+                    p_225360_.setBlock(blockpos$mutableblockpos, CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get().defaultBlockState(), 2);
                 }
             }
         }
@@ -76,7 +76,7 @@ public class DroopingVinesFeature extends Feature<NoneFeatureConfiguration> {
             blockpos$mutableblockpos.setWithOffset(p_225366_, p_225365_.nextInt(8) - p_225365_.nextInt(8), p_225365_.nextInt(2) - p_225365_.nextInt(7), p_225365_.nextInt(8) - p_225365_.nextInt(8));
             if (p_225364_.isEmptyBlock(blockpos$mutableblockpos)) {
                 BlockState blockstate = p_225364_.getBlockState(blockpos$mutableblockpos.above());
-                if (blockstate.is(Blocks.NETHERRACK) || blockstate.is(CharredBlocks.BLIGHT_NETHER_WART.get())) {
+                if (blockstate.is(Blocks.NETHERRACK) || blockstate.is(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get())) {
                     int j = Mth.nextInt(p_225365_, 1, 8);
                     if (p_225365_.nextInt(6) == 0) {
                         j *= 2;
@@ -88,14 +88,14 @@ public class DroopingVinesFeature extends Feature<NoneFeatureConfiguration> {
 
                     int k = 17;
                     int l = 25;
-                    placeWeepingVinesColumn(p_225364_, p_225365_, blockpos$mutableblockpos, j, 17, 25);
+                    placeDroopingVinesColumn(p_225364_, p_225365_, blockpos$mutableblockpos, j, 17, 25);
                 }
             }
         }
 
     }
 
-    public static void placeWeepingVinesColumn(LevelAccessor p_225353_, RandomSource p_225354_, BlockPos.MutableBlockPos p_225355_, int p_225356_, int p_225357_, int p_225358_) {
+    public static void placeDroopingVinesColumn(LevelAccessor p_225353_, RandomSource p_225354_, BlockPos.MutableBlockPos p_225355_, int p_225356_, int p_225357_, int p_225358_) {
         for (int i = 0; i <= p_225356_; ++i) {
             if (p_225353_.isEmptyBlock(p_225355_)) {
                 if (i == p_225356_ || !p_225353_.isEmptyBlock(p_225355_.below())) {
