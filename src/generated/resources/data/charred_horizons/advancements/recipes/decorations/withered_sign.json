@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "charred_horizons:withered_sign"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "withered_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "charred_horizons:withered_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "withered_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "charred_horizons:withered_sign"
+    ]
+  },
+  "sends_telemetry_event": false
+}

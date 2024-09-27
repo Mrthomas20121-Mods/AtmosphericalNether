@@ -64,6 +64,14 @@ public class CharredRecipeProvider extends RecipeProvider {
         fenceGateBuilder(CharredBlocks.WITHERED_FENCE_GATE.get(), i(W))
                 .unlockedBy(getHasName(W), has(W)).save(consumer);
 
+        signBuilder(CharredBlocks.BLIGHT_SIGN.get(), i(CharredBlocks.BLIGHT_PLANKS.get()))
+                .unlockedBy("blight_planks", has(CharredBlocks.BLIGHT_PLANKS.get())).save(consumer);
+        signBuilder(CharredBlocks.WITHERED_SIGN.get(), i(CharredBlocks.WITHERED_PLANKS.get()))
+                .unlockedBy("withered_planks", has(CharredBlocks.WITHERED_PLANKS.get())).save(consumer);
+
+        hangingSign(consumer, CharredBlocks.BLIGHT_HANGING_SIGN.get(), CharredBlocks.BLIGHT_PLANKS.get());
+        hangingSign(consumer, CharredBlocks.WITHERED_HANGING_SIGN.get(), CharredBlocks.WITHERED_PLANKS.get());
+
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CharredItems.FIERY_BOW.get())
                 .define('#', Items.GOLD_INGOT).define('X', CharredItems.FIERY_STRING.get())
                 .pattern(" #X").pattern("# X").pattern(" #X")

@@ -1,4 +1,5 @@
 {
+  "parent": "minecraft:nether/root",
   "criteria": {
     "gold_ring": {
       "conditions": {
@@ -26,7 +27,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.charred_horizons.improved_farmland_bow"
+      "translate": "advancement.charred_horizons.improved_farmland"
     }
   },
   "requirements": [
