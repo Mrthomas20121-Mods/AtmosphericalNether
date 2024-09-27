@@ -83,9 +83,13 @@ public class CharredItemModelProvider extends ItemModelProvider {
         itemBlock(CharredBlocks.WITHERED_HYPHAE.get());
         itemBlock(CharredBlocks.STRIPPED_WITHERED_STEM.get());
         itemBlock(CharredBlocks.STRIPPED_WITHERED_HYPHAE.get());
+        itemBlock(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get());
 
         basicItem(CharredItems.FIERY_STRING.get());
         bowItem(CharredItems.FIERY_BOW.get());
+        basicItem(CharredItems.SULFUR_DUST.get());
+        basicItem(CharredItems.SULFURIC_BONE.get());
+        basicItem(CharredItems.SULFURIC_BONE_MEAL.get());
     }
 
     public void itemBlock(Block block) {

@@ -57,6 +57,8 @@ public class CharredLangProvider extends LanguageProvider {
         addBlock(CharredBlocks.WITHERED_SIGN, "Withered Sign");
         addBlock(CharredBlocks.WITHERED_HANGING_SIGN, "Withered Hanging Sign");
 
+        addBlock(CharredBlocks.IMPROVED_FARMLAND_BLOCK, "Improved Farmland");
+
         addItem(CharredItems.MYSTERIOUS_CHARM, "Mysterious Charm");
         addItem(CharredItems.BLIGHT_RING, "Blight Ring");
         addItem(CharredItems.GOLD_RING, "Gold Ring");
@@ -67,7 +69,19 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.SULFURIC_SKELETON_EGG, "Sulfuric Skeleton Spawn Egg");
         addItem(CharredItems.FIERY_SPIDER_EGG, "Fiery Spider Spawn Egg");
 
-        add("item.charred_horizons.fiery_bow.description", "Draw faster than a bow and shoot fire arrow");
+        add("item.charred_horizons.fiery_bow.description", "Fast draw bow that shoot fire arrow");
         add("item.charred_horizons.netherite_ring.effect", "Piglins become neutral.");
+
+        // advancements
+        add("advancement.charred_horizons.gold_ring", "One ring to rule them all...");
+        add("advancement.charred_horizons.gold_ring.desc", "Obtain a Gold Ring from a Fortress or Bastion.");
+        add("advancement.charred_horizons.mysterious_charm", "One Step at a time");
+        add("advancement.charred_horizons.mysterious_charm.desc", "Obtain a Mysterious charm from a Nether Fortress.");
+        add("advancement.charred_horizons.fiery_bow", "Harder Faster Better Stronger.");
+        add("advancement.charred_horizons.fiery_bow.desc", "Craft a Fiery Bow.");
+        add("advancement.charred_horizons.fiery_spider", "Oh Crap a spider.");
+        add("advancement.charred_horizons.fiery_spider.desc", "Kill a Fiery Spider.");
+        add("advancement.charred_horizons.sulfuric_skeleton", "Oh Crap a spider.");
+        add("advancement.charred_horizons.sulfuric_skeleton.desc", "Kill a Fiery Spider.");
     }
 }

@@ -1,0 +1,40 @@
+{
+  "criteria": {
+    "gold_ring": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "charred_horizons:sulfuric_skeleton"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_killed_player"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/netherrack.png",
+    "description": {
+      "translate": "advancement.charred_horizons.sulfuric.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "charred_horizons:fiery_string"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.charred_horizons.sulfuric_skeleton"
+    }
+  },
+  "requirements": [
+    [
+      "gold_ring"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

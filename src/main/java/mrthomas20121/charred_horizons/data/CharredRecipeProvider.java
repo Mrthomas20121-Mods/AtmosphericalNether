@@ -66,7 +66,7 @@ public class CharredRecipeProvider extends RecipeProvider {
         fenceGateBuilder(CharredBlocks.WITHERED_FENCE_GATE.get(), i(W))
                 .unlockedBy(getHasName(W), has(W)).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.BOW)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CharredItems.FIERY_BOW.get())
                 .define('#', Items.GOLD_INGOT).define('X', CharredItems.FIERY_STRING.get())
                 .pattern(" #X").pattern("# X").pattern(" #X")
                 .unlockedBy("has_fiery_string", has(CharredItems.FIERY_STRING.get())).save(consumer);

@@ -24,6 +24,11 @@ public class CharredItems {
     public static RegistryObject<WitheredSwordItem> WITHERED_SWORD = ITEMS.register("withered_sword", WitheredSwordItem::new);
     public static RegistryObject<BlazeSlayerItem> BLAZE_SLAYER = ITEMS.register("blaze_slayer", BlazeSlayerItem::new);
 
+    public static RegistryObject<Item> SULFUR_DUST = ITEMS.register("sulfur_dust", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static RegistryObject<Item> SULFURIC_BONE = ITEMS.register("sulfuric_bone", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<SulfuricBoneMeal> SULFURIC_BONE_MEAL = ITEMS.register("sulfuric_bone_meal", SulfuricBoneMeal::new);
+
     public static RegistryObject<Item> FIERY_STRING = ITEMS.register("fiery_string", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static RegistryObject<FieryBowItem> FIERY_BOW = ITEMS.register("fiery_bow", FieryBowItem::new);
 

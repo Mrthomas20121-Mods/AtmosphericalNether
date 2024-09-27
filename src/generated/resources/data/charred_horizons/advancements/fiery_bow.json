@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "gold_ring": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "charred_horizons:fiery_bow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/netherrack.png",
+    "description": {
+      "translate": "advancement.charred_horizons.fiery_bow.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "charred_horizons:gold_ring"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.charred_horizons.fiery_bow"
+    }
+  },
+  "requirements": [
+    [
+      "gold_ring"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
