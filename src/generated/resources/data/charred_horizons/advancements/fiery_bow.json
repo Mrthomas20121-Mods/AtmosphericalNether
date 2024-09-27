@@ -14,7 +14,7 @@
     }
   },
   "display": {
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "background": "minecraft:textures/block/netherrack.png",
     "description": {
       "translate": "advancement.charred_horizons.fiery_bow.desc"
@@ -22,9 +22,9 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "charred_horizons:gold_ring"
+      "item": "charred_horizons:fiery_bow"
     },
-    "show_toast": false,
+    "show_toast": true,
     "title": {
       "translate": "advancement.charred_horizons.fiery_bow"
     }

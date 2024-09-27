@@ -30,34 +30,34 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.gold_ring"),
                         Component.translatable("advancement.charred_horizons.gold_ring.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
-                        FrameType.TASK, false, false, false)
+                        FrameType.TASK, true, true, false)
                 .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.GOLD_RING.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "gold_ring"), existingFileHelper);
 
         Advancement mysterious_charm = Advancement.Builder.advancement()
-                .display(CharredItems.GOLD_RING.get(),
+                .display(CharredItems.MYSTERIOUS_CHARM.get(),
                         Component.translatable("advancement.charred_horizons.mysterious_charm"),
                         Component.translatable("advancement.charred_horizons.mysterious_charm.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
-                        FrameType.TASK, false, false, false)
+                        FrameType.TASK, true, true, false)
                 .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.MYSTERIOUS_CHARM.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "mysterious_charm"), existingFileHelper);
 
         Advancement FIERY_BOW = Advancement.Builder.advancement()
-                .display(CharredItems.GOLD_RING.get(),
+                .display(CharredItems.FIERY_BOW.get(),
                         Component.translatable("advancement.charred_horizons.fiery_bow"),
                         Component.translatable("advancement.charred_horizons.fiery_bow.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
-                        FrameType.TASK, false, false, false)
+                        FrameType.TASK, true, true, false)
                 .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.FIERY_BOW.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_bow"), existingFileHelper);
 
         Advancement IMPROVED_FARMLAND = Advancement.Builder.advancement()
-                .display(CharredItems.GOLD_RING.get(),
+                .display(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get(),
                         Component.translatable("advancement.charred_horizons.improved_farmland_bow"),
                         Component.translatable("advancement.charred_horizons.improved_farmland.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
-                        FrameType.TASK, false, false, false)
+                        FrameType.TASK, true, true, false)
                 .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "improved_farmland"), existingFileHelper);
 
@@ -66,17 +66,17 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.fiery_spider"),
                         Component.translatable("advancement.charred_horizons.fiery_spider.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
-                        FrameType.TASK, false, false, false)
+                        FrameType.TASK, true, true, false)
                 .addCriterion("gold_ring", KilledTrigger.TriggerInstance.entityKilledPlayer(
                         EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(CharredEntityTypes.FIERY_SPIDER.get()))))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_spider"), existingFileHelper);
 
         Advancement SULFURIC_SKELETON = Advancement.Builder.advancement()
-                .display(CharredItems.FIERY_STRING.get(),
+                .display(CharredItems.SULFURIC_BONE.get(),
                         Component.translatable("advancement.charred_horizons.sulfuric_skeleton"),
                         Component.translatable("advancement.charred_horizons.sulfuric.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
-                        FrameType.TASK, false, false, false)
+                        FrameType.TASK, true, true, false)
                 .addCriterion("gold_ring", KilledTrigger.TriggerInstance.entityKilledPlayer(
                         EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(CharredEntityTypes.SULFURIC_SKELETON.get()))))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "sulfuric_skeleton"), existingFileHelper);

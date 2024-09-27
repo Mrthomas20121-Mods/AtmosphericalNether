@@ -16,7 +16,7 @@
     }
   },
   "display": {
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "background": "minecraft:textures/block/netherrack.png",
     "description": {
       "translate": "advancement.charred_horizons.fiery_spider.desc"
@@ -26,7 +26,7 @@
     "icon": {
       "item": "charred_horizons:fiery_string"
     },
-    "show_toast": false,
+    "show_toast": true,
     "title": {
       "translate": "advancement.charred_horizons.fiery_spider"
     }

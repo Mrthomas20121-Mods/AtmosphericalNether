@@ -68,8 +68,8 @@ public class CharredBlockstateProvider extends BlockStateProvider {
         logBlock(CharredBlocks.STRIPPED_BLIGHT_STEM.get());
         logBlock(CharredBlocks.STRIPPED_WITHERED_STEM.get());
 
-        hyphae(CharredBlocks.STRIPPED_BLIGHT_HYPHAE.get(), new ResourceLocation("charred_horizons:block/stripped_blight_stem_top"));
-        hyphae(CharredBlocks.STRIPPED_WITHERED_HYPHAE.get(), new ResourceLocation("charred_horizons:block/stripped_withered_stem_top"));
+        hyphae(CharredBlocks.STRIPPED_BLIGHT_HYPHAE.get(), new ResourceLocation("charred_horizons:block/stripped_blight_stem"));
+        hyphae(CharredBlocks.STRIPPED_WITHERED_HYPHAE.get(), new ResourceLocation("charred_horizons:block/stripped_withered_stem"));
 
         buttonBlock(CharredBlocks.BLIGHT_BUTTON.get(), new ResourceLocation("charred_horizons:block/blight_planks"));
         buttonBlock(CharredBlocks.WITHERED_BUTTON.get(), new ResourceLocation("charred_horizons:block/withered_planks"));

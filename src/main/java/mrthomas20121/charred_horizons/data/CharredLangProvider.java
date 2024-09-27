@@ -27,6 +27,9 @@ public class CharredLangProvider extends LanguageProvider {
         addBlock(CharredBlocks.BLIGHT_NYLIUM, "Blight Nylium");
         addBlock(CharredBlocks.BLIGHT_FUNGUS, "Blight Fungus");
         addBlock(CharredBlocks.BLIGHT_STEM, "Blight Stem");
+        addBlock(CharredBlocks.BLIGHT_HYPHAE, "Blight Hyphae");
+        addBlock(CharredBlocks.STRIPPED_BLIGHT_STEM, "Blight Stem");
+        addBlock(CharredBlocks.STRIPPED_BLIGHT_HYPHAE, "Stripped Blight Hyphae");
         addBlock(CharredBlocks.BLIGHT_PLANKS, "Blight Planks");
         addBlock(CharredBlocks.BLIGHT_SLAB, "Blight Slab");
         addBlock(CharredBlocks.BLIGHT_STAIRS, "Blight Stairs");
@@ -40,6 +43,9 @@ public class CharredLangProvider extends LanguageProvider {
         addBlock(CharredBlocks.WITHERED_NYLIUM, "Withered Nylium");
         addBlock(CharredBlocks.WITHERED_FUNGUS, "Withered Fungus");
         addBlock(CharredBlocks.WITHERED_STEM, "Withered Stem");
+        addBlock(CharredBlocks.WITHERED_HYPHAE, "Withered Hyphae");
+        addBlock(CharredBlocks.STRIPPED_WITHERED_STEM, "Withered Stem");
+        addBlock(CharredBlocks.STRIPPED_WITHERED_HYPHAE, "Stripped Withered Hyphae");
         addBlock(CharredBlocks.WITHERED_PLANKS, "Withered Planks");
         addBlock(CharredBlocks.WITHERED_SLAB, "Withered Slab");
         addBlock(CharredBlocks.WITHERED_STAIRS, "Withered Stairs");
@@ -84,8 +90,8 @@ public class CharredLangProvider extends LanguageProvider {
         add("advancement.charred_horizons.fiery_bow.desc", "Craft a Fiery Bow.");
         add("advancement.charred_horizons.fiery_spider", "Oh Crap a spider.");
         add("advancement.charred_horizons.fiery_spider.desc", "Kill a Fiery Spider.");
-        add("advancement.charred_horizons.sulfuric_skeleton", "Oh Crap a spider.");
-        add("advancement.charred_horizons.sulfuric_skeleton.desc", "Kill a Fiery Spider.");
+        add("advancement.charred_horizons.sulfuric_skeleton", "What in Tarnation!");
+        add("advancement.charred_horizons.sulfuric_skeleton.desc", "Kill a Sulfuric Skeleton.");
         add("advancement.charred_horizons.improved_farmland", "Work Smart, Not Harder.");
         add("advancement.charred_horizons.improved_farmland.desc", "Craft an Improved Farmland Block.");
     }
