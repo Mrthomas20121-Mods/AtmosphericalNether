@@ -6,10 +6,7 @@ import mrthomas20121.charred_horizons.client.renderer.CharredModelLayers;
 import mrthomas20121.charred_horizons.client.renderer.FierySpiderRenderer;
 import mrthomas20121.charred_horizons.client.renderer.SulfuricSkeletonRenderer;
 import mrthomas20121.charred_horizons.entity.FierySpider;
-import mrthomas20121.charred_horizons.init.CharredBlockEntities;
-import mrthomas20121.charred_horizons.init.CharredBlocks;
-import mrthomas20121.charred_horizons.init.CharredEntityTypes;
-import mrthomas20121.charred_horizons.init.CharredParticleTypes;
+import mrthomas20121.charred_horizons.init.*;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.SkeletonModel;
@@ -20,6 +17,8 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -33,6 +32,13 @@ public class CharredClient {
     @SubscribeEvent
     public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(CharredParticleTypes.BLIGHT_SPORE.get(), BlightSporeProvider::new);
+    }
+
+    public static void registerItemProperties() {
+        ItemProperties.register(CharredItems.FIERY_BOW.get(), new ResourceLocation("pulling"),
+                (stack, world, living, i) -> living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F);
+        ItemProperties.register(CharredItems.FIERY_BOW.get(), new ResourceLocation("pull"),
+                (stack, world, living, i) -> living != null ? living.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration() - living.getUseItemRemainingTicks()) / 20.0F : 0.0F);
     }
 
     @SubscribeEvent
@@ -63,6 +69,8 @@ public class CharredClient {
     @SubscribeEvent
     public static void clientInit(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
+            registerItemProperties();
+
             RenderType cutout = RenderType.cutout();
 
             ItemBlockRenderTypes.setRenderLayer(CharredBlocks.DROOPING_VINES.get(), cutout);

@@ -28,7 +28,7 @@ public class CharredItems {
     public static RegistryObject<FieryBowItem> FIERY_BOW = ITEMS.register("fiery_bow", FieryBowItem::new);
 
     public static RegistryObject<ForgeSpawnEggItem> SULFURIC_SKELETON_EGG = ITEMS.register("sulfuric_skeleton_egg",
-            () -> new ForgeSpawnEggItem(CharredEntityTypes.SULFURIC_SKELETON, 0x1D2121, 0x1D2121, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(CharredEntityTypes.SULFURIC_SKELETON, 0x1D2121, 0xD6CB35, new Item.Properties()));
 
     public static RegistryObject<ForgeSpawnEggItem> FIERY_SPIDER_EGG = ITEMS.register("fiery_spider_egg",
             () -> new ForgeSpawnEggItem(CharredEntityTypes.FIERY_SPIDER, 0xEFA743, 0xA80E0E, new Item.Properties()));
