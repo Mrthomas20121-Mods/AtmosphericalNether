@@ -68,8 +68,8 @@ public class CharredEvents {
         }
 
         @SubscribeEvent
-        public static void playerAttackedEvent(LivingHurtEvent event) {
-            if (event.getSource().getDirectEntity().getType() != null)
+        public static void entityAttackedEvent(LivingHurtEvent event) {
+            if (event.getSource().getDirectEntity() != null)
                 if (event.getSource().getDirectEntity().getType().equals(CharredEntityTypes.FIERY_SPIDER.get())) {
                     event.getEntity().setSecondsOnFire(100);
                 }
