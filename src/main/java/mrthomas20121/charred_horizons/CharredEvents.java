@@ -26,6 +26,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -64,6 +65,14 @@ public class CharredEvents {
             if (event.getItem().is(CharredItems.FIERY_BOW.get()) && event.getDuration() > event.getItem().getUseDuration() - 20) {
                 event.setDuration(event.getDuration() - 2);
             }
+        }
+
+        @SubscribeEvent
+        public static void playerAttackedEvent(LivingHurtEvent event) {
+            if (event.getSource().getDirectEntity().getType() != null)
+                if (event.getSource().getDirectEntity().getType().equals(CharredEntityTypes.FIERY_SPIDER.get())) {
+                    event.getEntity().setSecondsOnFire(100);
+                }
         }
     }
 
