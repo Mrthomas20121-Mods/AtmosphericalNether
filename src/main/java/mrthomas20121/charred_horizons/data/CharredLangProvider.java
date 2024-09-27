@@ -66,6 +66,9 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.WITHERED_SWORD, "Wither Skeleton Sword");
         addItem(CharredItems.FIERY_STRING, "Fiery String");
         addItem(CharredItems.FIERY_BOW, "Fiery Bow");
+        addItem(CharredItems.SULFUR_DUST, "Sulfur Dust");
+        addItem(CharredItems.SULFURIC_BONE, "Sulfuric Bone");
+        addItem(CharredItems.SULFURIC_BONE_MEAL, "Sulfuric Bone Meal");
         addItem(CharredItems.SULFURIC_SKELETON_EGG, "Sulfuric Skeleton Spawn Egg");
         addItem(CharredItems.FIERY_SPIDER_EGG, "Fiery Spider Spawn Egg");
 
@@ -83,5 +86,7 @@ public class CharredLangProvider extends LanguageProvider {
         add("advancement.charred_horizons.fiery_spider.desc", "Kill a Fiery Spider.");
         add("advancement.charred_horizons.sulfuric_skeleton", "Oh Crap a spider.");
         add("advancement.charred_horizons.sulfuric_skeleton.desc", "Kill a Fiery Spider.");
+        add("advancement.charred_horizons.improved_farmland", "Work Smart, Not Harder.");
+        add("advancement.charred_horizons.improved_farmland.desc", "Craft an Improved Farmland Block.");
     }
 }

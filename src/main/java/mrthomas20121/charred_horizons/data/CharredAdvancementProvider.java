@@ -1,6 +1,7 @@
 package mrthomas20121.charred_horizons.data;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
+import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import net.minecraft.advancements.Advancement;
@@ -49,6 +50,15 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, false, false, false)
                 .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.FIERY_BOW.get()))
+                .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_bow"), existingFileHelper);
+
+        Advancement IMPROVED_FARMLAND = Advancement.Builder.advancement()
+                .display(CharredItems.GOLD_RING.get(),
+                        Component.translatable("advancement.charred_horizons.improved_farmland_bow"),
+                        Component.translatable("advancement.charred_horizons.improved_farmland.desc"),
+                        new ResourceLocation("textures/block/netherrack.png"),
+                        FrameType.TASK, false, false, false)
+                .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_bow"), existingFileHelper);
 
         Advancement FIERY_SPIDER = Advancement.Builder.advancement()

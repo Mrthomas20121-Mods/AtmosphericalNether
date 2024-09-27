@@ -30,6 +30,8 @@ public class CharredItemTagProvider extends ItemTagsProvider {
 
         tag(Tags.Items.STRING).add(CharredItems.FIERY_STRING.get());
         tag(Tags.Items.TOOLS_BOWS).add(CharredItems.FIERY_BOW.get());
+        tag(Tags.Items.BONES).add(CharredItems.SULFURIC_BONE.get());
+        tag(CharredTags.Items.DUSTS_SULFUR).add(CharredItems.SULFUR_DUST.get());
 
         tag(ItemTags.PLANKS)
                 .add(

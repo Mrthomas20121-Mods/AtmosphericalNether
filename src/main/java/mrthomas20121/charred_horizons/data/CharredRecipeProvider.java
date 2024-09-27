@@ -4,10 +4,8 @@ import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import mrthomas20121.charred_horizons.init.CharredTags;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -69,7 +67,23 @@ public class CharredRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CharredItems.FIERY_BOW.get())
                 .define('#', Items.GOLD_INGOT).define('X', CharredItems.FIERY_STRING.get())
                 .pattern(" #X").pattern("# X").pattern(" #X")
-                .unlockedBy("has_fiery_string", has(CharredItems.FIERY_STRING.get())).save(consumer);
+                .unlockedBy("has_fiery_string", has(CharredItems.FIERY_STRING.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CharredItems.SULFURIC_BONE_MEAL.get(), 3)
+                .unlockedBy("has_sulfuric_bone", has(CharredItems.SULFURIC_BONE.get()))
+                .requires(CharredItems.SULFURIC_BONE.get())
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CharredBlocks.IMPROVED_FARMLAND_BLOCK.get(), 1)
+                .pattern("SMS")
+                .pattern("MDM")
+                .pattern("SMS")
+                .define('S', CharredTags.Items.DUSTS_SULFUR)
+                .define('M', CharredItems.SULFURIC_BONE_MEAL.get())
+                .define('D', ItemTags.DIRT)
+                .unlockedBy("has_sulfur_dust", has(CharredTags.Items.DUSTS_SULFUR))
+                .save(consumer);
     }
 
     private Ingredient i(ItemLike itemLike) {

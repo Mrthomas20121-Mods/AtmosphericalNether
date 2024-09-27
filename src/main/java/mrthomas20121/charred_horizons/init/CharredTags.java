@@ -17,6 +17,8 @@ public class CharredTags {
         public static TagKey<Item> CURIO_RING = create("curios:ring");
         public static TagKey<Item> CURIO_CHARM = create("curios:charm");
 
+        public static TagKey<Item> DUSTS_SULFUR = forge("dusts/sulfur");
+
         public static TagKey<Item> WITHERED_REPAIR_MATERIALS = mod("withered_repair_materials");
         public static TagKey<Item> BLAZE_SLAYER_REPAIR_MATERIALS = mod("blaze_slayer_repair_materials");
 
