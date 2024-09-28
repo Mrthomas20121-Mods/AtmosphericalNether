@@ -78,7 +78,7 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.SULFURIC_SKELETON_EGG, "Sulfuric Skeleton Spawn Egg");
         addItem(CharredItems.FIERY_SPIDER_EGG, "Fiery Spider Spawn Egg");
 
-        add("item.charred_horizons.fiery_bow.description", "Fast draw bow that shoot fire arrow");
+        add("item.charred_horizons.fiery_bow.description", "Always crit when enchanted with flame.");
         add("item.charred_horizons.netherite_ring.effect", "Piglins become neutral.");
 
         // advancements
