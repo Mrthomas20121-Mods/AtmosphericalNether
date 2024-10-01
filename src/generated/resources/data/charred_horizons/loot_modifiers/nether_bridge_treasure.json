@@ -3,14 +3,21 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:chests/bastion_treasure"
+      "loot_table_id": "minecraft:chests/nether_bridge"
     }
   ],
   "entries": [
     {
       "data": {
         "Count": 1,
-        "id": "charred_horizons:gold_ring"
+        "id": "charred_horizons:mysterious_charm"
+      },
+      "weight": 1
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "charred_horizons:blight_ring"
       },
       "weight": 1
     },
@@ -23,12 +30,22 @@
         }
       },
       "weight": 1
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "charred_horizons:withered_sword",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 1
     }
   ],
   "rolls": {
     "type": "minecraft:uniform",
     "value": {
-      "max_inclusive": 1,
+      "max_inclusive": 2,
       "min_inclusive": 1
     }
   }

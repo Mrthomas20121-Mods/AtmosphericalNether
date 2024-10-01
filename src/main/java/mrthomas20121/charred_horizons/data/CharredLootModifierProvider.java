@@ -30,10 +30,10 @@ public class CharredLootModifierProvider extends GlobalLootModifierProvider {
                         WeightedEntry.wrap(new ItemStack(CharredItems.GOLD_RING.get()), 1),
                         WeightedEntry.wrap(new ItemStack(CharredItems.BLAZE_SLAYER.get()), 1)
                 ),
-                UniformInt.of(1, 4))
+                UniformInt.of(1, 1))
         );
 
-        this.add("bastion_treasure", new AddDungeonLootModifier(
+        this.add("nether_bridge_treasure", new AddDungeonLootModifier(
                 new LootItemCondition[] {
                         LootTableIdCondition.builder(BuiltInLootTables.NETHER_BRIDGE).build()
                 },
@@ -41,9 +41,9 @@ public class CharredLootModifierProvider extends GlobalLootModifierProvider {
                         WeightedEntry.wrap(new ItemStack(CharredItems.MYSTERIOUS_CHARM.get()), 1),
                         WeightedEntry.wrap(new ItemStack(CharredItems.BLIGHT_RING.get()), 1),
                         WeightedEntry.wrap(new ItemStack(CharredItems.BLAZE_SLAYER.get()), 1),
-                        WeightedEntry.wrap(new ItemStack(CharredItems.WITHERED_SWORD.get()), 3)
+                        WeightedEntry.wrap(new ItemStack(CharredItems.WITHERED_SWORD.get()), 1)
                 ),
-                UniformInt.of(1, 6))
+                UniformInt.of(1, 2))
         );
     }
 }
