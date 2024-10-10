@@ -20,17 +20,20 @@ public class CharredBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        tag(BlockTags.MUSHROOM_GROW_BLOCK).add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());
         tag(BlockTags.NYLIUM)
-                .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get());
+                .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());
         tag(BlockTags.INFINIBURN_NETHER)
-                .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get());
+                .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get());
+                .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(
                         CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get(),
                         CharredBlocks.WITHERED_NETHER_WART_BLOCK.get(),
-                        CharredBlocks.EXOTIC_SHROOMLIGHT.get()
+                        CharredBlocks.EXOTIC_SHROOMLIGHT.get(),
+                        CharredBlocks.MYSTIC_MUSHROOM_BLOCK.get(),
+                        CharredBlocks.MYSTIC_MUSHROOM_STEM.get()
                 );
 
         tag(BlockTags.MINEABLE_WITH_AXE)

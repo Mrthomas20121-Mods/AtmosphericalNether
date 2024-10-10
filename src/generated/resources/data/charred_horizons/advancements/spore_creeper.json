@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "spore_creeper": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "charred_horizons:spore_creeper"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/netherrack.png",
+    "description": {
+      "translate": "advancement.charred_horizons.spore_creeper.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "charred_horizons:sulfur_dust"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.charred_horizons.spore_creeper"
+    }
+  },
+  "requirements": [
+    [
+      "spore_creeper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

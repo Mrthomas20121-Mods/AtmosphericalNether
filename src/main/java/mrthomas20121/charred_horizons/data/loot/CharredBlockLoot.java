@@ -17,8 +17,15 @@ public class CharredBlockLoot extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.add(CharredBlocks.BLIGHT_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
+        this.add(CharredBlocks.MYSTIC_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         this.add(CharredBlocks.WITHERED_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         addNetherVinesDropTable(CharredBlocks.DROOPING_VINES.get(), CharredBlocks.DROOPING_VINES_PLANT.get());
+        addNetherVinesDropTable(CharredBlocks.MYSTIC_VINES.get(), CharredBlocks.MYSTIC_VINES_PLANT.get());
+
+        this.add(CharredBlocks.MYSTIC_MUSHROOM_BLOCK.get(), (block -> this.createMushroomBlockDrop(block, CharredBlocks.MYSTIC_MUSHROOM.get())));
+        this.add(CharredBlocks.MYSTIC_MUSHROOM_STEM.get(), (block -> this.createMushroomBlockDrop(block, CharredBlocks.MYSTIC_MUSHROOM.get())));
+        dropSelf(CharredBlocks.MYSTIC_MUSHROOM.get());
+        dropSelf(CharredBlocks.MYSTIC_ROOT.get());
         dropSelf(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get());
         dropSelf(CharredBlocks.EXOTIC_SHROOMLIGHT.get());
         dropSelf(CharredBlocks.BLIGHT_FUNGUS.get());

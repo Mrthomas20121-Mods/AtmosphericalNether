@@ -20,6 +20,7 @@ public class CharredLangProvider extends LanguageProvider {
 
         addEntityType(CharredEntityTypes.SULFURIC_SKELETON, "Sulfuric Skeleton");
         addEntityType(CharredEntityTypes.FIERY_SPIDER, "Fiery Spider");
+        addEntityType(CharredEntityTypes.SPORE_CREEPER, "Spore Creeper");
         addBlock(CharredBlocks.EXOTIC_SHROOMLIGHT, "Exotic Shroomlight");
         addBlock(CharredBlocks.DROOPING_VINES, "Drooping Vines");
         addBlock(CharredBlocks.DROOPING_VINES_PLANT, "Drooping Vines Plant");
@@ -57,6 +58,14 @@ public class CharredLangProvider extends LanguageProvider {
         addBlock(CharredBlocks.WITHERED_BUTTON, "Withered Button");
         addBlock(CharredBlocks.WITHERED_NETHER_WART_BLOCK, "Withered Nether Wart");
         addBlock(CharredBlocks.BLIGHT_NETHER_WART_BLOCK, "Blight Nether Wart");
+
+        addBlock(CharredBlocks.MYSTIC_VINES, "Cryptic Vines");
+        addBlock(CharredBlocks.MYSTIC_VINES_PLANT, "Cryptic Vines Plant");
+        addBlock(CharredBlocks.MYSTIC_ROOT, "Mystic Root");
+        addBlock(CharredBlocks.MYSTIC_NYLIUM, "Mystic Nylium");
+        addBlock(CharredBlocks.MYSTIC_MUSHROOM, "Mystic Mushroom");
+        addBlock(CharredBlocks.MYSTIC_MUSHROOM_BLOCK, "Mystic Mushroom Block");
+        addBlock(CharredBlocks.MYSTIC_MUSHROOM_STEM, "Mystic Mushroom Stem");
 
         addBlock(CharredBlocks.BLIGHT_SIGN, "Blight Sign");
         addBlock(CharredBlocks.BLIGHT_HANGING_SIGN, "Blight Hanging Sign");

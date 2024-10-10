@@ -61,8 +61,8 @@
   "has_precipitation": false,
   "spawn_costs": {
     "minecraft:ghast": {
-      "charge": 0.2,
-      "energy_budget": 0.17
+      "charge": 0.7,
+      "energy_budget": 0.15
     },
     "minecraft:strider": {
       "charge": 0.7,
@@ -90,7 +90,7 @@
         "type": "minecraft:ghast",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 40
+        "weight": 50
       },
       {
         "type": "minecraft:wither_skeleton",

@@ -23,5 +23,6 @@ public class CharredRegion extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         this.addBiome(mapper, Climate.parameters(0.0F, -0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), CharredBiomes.DECAYING_VALLEY);
         this.addBiome(mapper, Climate.parameters(0.4F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), CharredBiomes.DESOLATED_FOREST);
+        this.addBiome(mapper, Climate.parameters(0F, 0.5F, 0F, 0.0F, 0.0F, 0.0F, 0.0F), CharredBiomes.FUNGAL_ABYSS);
     }
 }

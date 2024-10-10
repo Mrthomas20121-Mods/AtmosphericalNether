@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": {
+      "feature": "charred_horizons:huge_mystic_mushroom",
+      "placement": []
+    },
+    "feature_true": {
+      "feature": "charred_horizons:small_mystic_mushroom",
+      "placement": []
+    }
+  }
+}

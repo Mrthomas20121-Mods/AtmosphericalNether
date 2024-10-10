@@ -1,5 +1,6 @@
 package mrthomas20121.charred_horizons.data.loot;
 
+import mrthomas20121.charred_horizons.init.CharredBlocks;
 import mrthomas20121.charred_horizons.init.CharredEntityTypes;
 import mrthomas20121.charred_horizons.init.CharredItems;
 import net.minecraft.data.loot.EntityLootSubProvider;
@@ -29,10 +30,11 @@ public class CharredEntityLoot extends EntityLootSubProvider {
     public void generate() {
         add(CharredEntityTypes.SULFURIC_SKELETON.get(), CharredLoot.SULFURIC_SKELETON, new LootTable.Builder().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.ARROW).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(CharredItems.SULFURIC_BONE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))).add(LootItem.lootTableItem(CharredItems.SULFUR_DUST.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
         add(CharredEntityTypes.FIERY_SPIDER.get(), CharredLoot.FIERY_SPIDER, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(CharredItems.FIERY_STRING.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.SPIDER_EYE).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1.0F, 1.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))).when(LootItemKilledByPlayerCondition.killedByPlayer())));
+        add(CharredEntityTypes.SPORE_CREEPER.get(), CharredLoot.SPORE_CREEPER, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(CharredBlocks.MYSTIC_ROOT.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)).when(LootItemKilledByPlayerCondition.killedByPlayer())));
     }
 
     @Override
     protected Stream<EntityType<?>> getKnownEntityTypes() {
-        return Stream.of(CharredEntityTypes.SULFURIC_SKELETON.get(), CharredEntityTypes.FIERY_SPIDER.get());
+        return Stream.of(CharredEntityTypes.SULFURIC_SKELETON.get(), CharredEntityTypes.FIERY_SPIDER.get(), CharredEntityTypes.SPORE_CREEPER.get());
     }
 }

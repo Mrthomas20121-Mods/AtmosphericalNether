@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "charred_horizons:block/mystic_mushroom"
+  }
+}

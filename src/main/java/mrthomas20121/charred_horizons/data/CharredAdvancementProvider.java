@@ -42,7 +42,7 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.mysterious_charm.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, true, true, false)
-                .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.MYSTERIOUS_CHARM.get()))
+                .addCriterion("mysterious_charm", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.MYSTERIOUS_CHARM.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "mysterious_charm"), existingFileHelper);
 
         Advancement FIERY_BOW = Advancement.Builder.advancement()
@@ -52,7 +52,7 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.fiery_bow.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, true, true, false)
-                .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.FIERY_BOW.get()))
+                .addCriterion("fiery_bow", InventoryChangeTrigger.TriggerInstance.hasItems(CharredItems.FIERY_BOW.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_bow"), existingFileHelper);
 
         Advancement IMPROVED_FARMLAND = Advancement.Builder.advancement()
@@ -62,7 +62,7 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.improved_farmland.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, true, true, false)
-                .addCriterion("gold_ring", InventoryChangeTrigger.TriggerInstance.hasItems(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get()))
+                .addCriterion("farmland", InventoryChangeTrigger.TriggerInstance.hasItems(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get()))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "improved_farmland"), existingFileHelper);
 
         Advancement FIERY_SPIDER = Advancement.Builder.advancement()
@@ -72,7 +72,7 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.fiery_spider.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, true, true, false)
-                .addCriterion("gold_ring", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(CharredEntityTypes.FIERY_SPIDER.get())))
+                .addCriterion("fiery_spider", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(CharredEntityTypes.FIERY_SPIDER.get())))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "fiery_spider"), existingFileHelper);
 
         Advancement SULFURIC_SKELETON = Advancement.Builder.advancement()
@@ -82,7 +82,17 @@ public class CharredAdvancementProvider implements ForgeAdvancementProvider.Adva
                         Component.translatable("advancement.charred_horizons.sulfuric_skeleton.desc"),
                         new ResourceLocation("textures/block/netherrack.png"),
                         FrameType.TASK, true, true, false)
-                .addCriterion("gold_ring", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(CharredEntityTypes.SULFURIC_SKELETON.get())))
+                .addCriterion("sulfuric_skeleton", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(CharredEntityTypes.SULFURIC_SKELETON.get())))
                 .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "sulfuric_skeleton"), existingFileHelper);
+
+        Advancement SPORE_CREEPER = Advancement.Builder.advancement()
+                .parent(new ResourceLocation("nether/root"))
+                .display(CharredItems.SULFUR_DUST.get(),
+                        Component.translatable("advancement.charred_horizons.spore_creeper"),
+                        Component.translatable("advancement.charred_horizons.spore_creeper.desc"),
+                        new ResourceLocation("textures/block/netherrack.png"),
+                        FrameType.TASK, true, true, false)
+                .addCriterion("spore_creeper", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(CharredEntityTypes.SPORE_CREEPER.get())))
+                .save(saver, new ResourceLocation(CharredHorizons.MOD_ID, "spore_creeper"), existingFileHelper);
     }
 }

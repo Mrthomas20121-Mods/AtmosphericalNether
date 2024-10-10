@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:nether/root",
   "criteria": {
-    "gold_ring": {
+    "fiery_spider": {
       "conditions": {
         "entity": [
           {
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "gold_ring"
+      "fiery_spider"
     ]
   ],
   "sends_telemetry_event": true

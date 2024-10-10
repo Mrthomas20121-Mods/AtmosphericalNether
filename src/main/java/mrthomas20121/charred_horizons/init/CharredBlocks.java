@@ -1,19 +1,19 @@
 package mrthomas20121.charred_horizons.init;
 
 import mrthomas20121.charred_horizons.CharredHorizons;
-import mrthomas20121.charred_horizons.block.CharredNyliumBlock;
-import mrthomas20121.charred_horizons.block.DroopingVineBlock;
-import mrthomas20121.charred_horizons.block.DroopingVinePlantBlock;
-import mrthomas20121.charred_horizons.block.ImprovedFarmlandBlock;
+import mrthomas20121.charred_horizons.block.*;
 import mrthomas20121.charred_horizons.block.sign.*;
 import mrthomas20121.charred_horizons.data.CharredConfiguredFeatures;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -51,7 +51,7 @@ public class CharredBlocks {
     public static RegistryObject<BlightWallSignBlock> BLIGHT_WALL_SIGN = registerNoItem("blight_wall_sign", () -> new BlightWallSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_SIGN).mapColor(MapColor.TERRACOTTA_ORANGE), CharredWoodTypes.BLIGHT));
     public static RegistryObject<BlightWallHangingSignBlock> BLIGHT_WALL_HANGING_SIGN = registerNoItem("blight_wall_hanging_sign", () -> new BlightWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_ORANGE), CharredWoodTypes.BLIGHT));
     public static RegistryObject<BlightCeilingHangingSignBlock> BLIGHT_HANGING_SIGN = registerNoItem("blight_hanging_sign", () -> new BlightCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_ORANGE), CharredWoodTypes.BLIGHT));
-    public static RegistryObject<Block> WITHERED_NYLIUM = register("withered_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).instrument(NoteBlockInstrument.BASEDRUM).isValidSpawn((state, getter, pos, entity) -> entity.is(EntityTypeTags.SKELETONS)).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
+    public static RegistryObject<Block> WITHERED_NYLIUM = register("withered_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).instrument(NoteBlockInstrument.BASEDRUM).isValidSpawn(CharredBlocks::always).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
     public static RegistryObject<FungusBlock> WITHERED_FUNGUS = register("withered_fungus", () -> new FungusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).noCollission().strength(0.4F).sound(SoundType.NYLIUM), CharredConfiguredFeatures.WITHERED_FUNGUS_PLANTED, WITHERED_NYLIUM.get()));
     public static RegistryObject<Block> WITHERED_NETHER_WART_BLOCK = register("withered_nether_wart", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
     public static RegistryObject<RotatedPillarBlock> WITHERED_STEM = register("withered_stem", () -> netherStem(MapColor.TERRACOTTA_BLACK));
@@ -71,6 +71,18 @@ public class CharredBlocks {
     public static RegistryObject<WitheredWallSignBlock> WITHERED_WALL_SIGN = registerNoItem("withered_wall_sign", () -> new WitheredWallSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_SIGN).mapColor(MapColor.TERRACOTTA_BLACK), CharredWoodTypes.WITHERED));
     public static RegistryObject<WitheredWallHangingSignBlock> WITHERED_WALL_HANGING_SIGN = registerNoItem("withered_wall_hanging_sign", () -> new WitheredWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_BLACK), CharredWoodTypes.WITHERED));
     public static RegistryObject<WitheredCeilingHangingSignBlock> WITHERED_HANGING_SIGN = registerNoItem("withered_hanging_sign", () -> new WitheredCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_BLACK), CharredWoodTypes.WITHERED));
+
+    public static RegistryObject<Block> MYSTIC_NYLIUM = register("mystic_nylium", () -> new CharredNyliumBlock(BlockBehaviour.Properties.of().isValidSpawn((state, getter, pos, entity) -> entity.equals(CharredEntityTypes.SPORE_CREEPER.get())).mapColor(MapColor.TERRACOTTA_GREEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM).randomTicks()));
+    public static RegistryObject<RootsBlock> MYSTIC_ROOT = register("mystic_root", () -> new RootsBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_ROOTS).mapColor(MapColor.TERRACOTTA_GREEN).noCollission().strength(0.4F).sound(SoundType.NYLIUM)));
+    public static RegistryObject<MysticVineBlock> MYSTIC_VINES = register("mystic_vines", () -> new MysticVineBlock(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES).mapColor(MapColor.TERRACOTTA_GREEN).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
+    public static RegistryObject<MysticVinePlantBlock> MYSTIC_VINES_PLANT = registerNoItem("mystic_vines_plant", () -> new MysticVinePlantBlock(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES_PLANT).mapColor(MapColor.TERRACOTTA_GREEN).instrument(NoteBlockInstrument.BASEDRUM).strength(0.4F).sound(SoundType.NETHER_WART)));
+    public static RegistryObject<MushroomBlock> MYSTIC_MUSHROOM = register("mystic_mushroom", () -> new MushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_GREEN).noCollission().strength(0.4F), CharredConfiguredFeatures.SMALL_MYSTIC_MUSHROOM));
+    public static RegistryObject<HugeMushroomBlock> MYSTIC_MUSHROOM_BLOCK = register("mystic_mushroom_block", () -> new HugeMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.TERRACOTTA_GREEN).strength(0.2F)));
+    public static RegistryObject<HugeMushroomBlock> MYSTIC_MUSHROOM_STEM = register("mystic_mushroom_stem", () -> new HugeMushroomBlock(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).mapColor(MapColor.TERRACOTTA_GREEN).strength(0.2F)));
+
+    private static Boolean always(BlockState p_50810_, BlockGetter p_50811_, BlockPos p_50812_, EntityType<?> p_50813_) {
+        return (boolean)true;
+    }
 
     private static RotatedPillarBlock netherStem(MapColor mapColor) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((state) -> mapColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.STEM));

@@ -30,7 +30,11 @@ public class CharredSurfaceData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(CharredBiomes.DESOLATED_FOREST),
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                 SurfaceRules.ifTrue(SurfaceRules.yStartCheck(VerticalAnchor.absolute(35), 0),
-                                        SurfaceRules.state(CharredBlocks.BLIGHT_NYLIUM.get().defaultBlockState()))))
+                                        SurfaceRules.state(CharredBlocks.BLIGHT_NYLIUM.get().defaultBlockState())))),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(CharredBiomes.FUNGAL_ABYSS),
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
+                                SurfaceRules.ifTrue(SurfaceRules.yStartCheck(VerticalAnchor.absolute(35), 0),
+                                        SurfaceRules.state(CharredBlocks.MYSTIC_NYLIUM.get().defaultBlockState()))))
         );
     }
 }

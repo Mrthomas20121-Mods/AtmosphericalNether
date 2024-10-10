@@ -12,4 +12,5 @@ public class CharredParticleTypes {
     public static DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(Registries.PARTICLE_TYPE, CharredHorizons.MOD_ID);
 
     public static RegistryObject<SimpleParticleType> BLIGHT_SPORE = PARTICLE_TYPES.register("blight_spore", () -> new SimpleParticleType(false));
+    public static RegistryObject<SimpleParticleType> FUNGAL_SPORE = PARTICLE_TYPES.register("fungal_spore", () -> new SimpleParticleType(false));
 }

@@ -37,4 +37,7 @@ public class CharredItems {
 
     public static RegistryObject<ForgeSpawnEggItem> FIERY_SPIDER_EGG = ITEMS.register("fiery_spider_egg",
             () -> new ForgeSpawnEggItem(CharredEntityTypes.FIERY_SPIDER, 0xEFA743, 0xA80E0E, new Item.Properties()));
+
+    public static RegistryObject<ForgeSpawnEggItem> SPORE_CREEPER_EGG = ITEMS.register("spore_creeper_egg",
+            () -> new ForgeSpawnEggItem(CharredEntityTypes.SPORE_CREEPER, 0x112D1F, 0x3A9968, new Item.Properties()));
 }

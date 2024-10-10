@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_single_face",
+  "textures": {
+    "texture": "charred_horizons:block/mystic_mushroom_block"
+  }
+}

@@ -25,6 +25,7 @@ public class CharredItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         withExistingParent(itemName(CharredItems.SULFURIC_SKELETON_EGG.get()), "minecraft:item/template_spawn_egg");
         withExistingParent(itemName(CharredItems.FIERY_SPIDER_EGG.get()), "minecraft:item/template_spawn_egg");
+        withExistingParent(itemName(CharredItems.SPORE_CREEPER_EGG.get()), "minecraft:item/template_spawn_egg");
 
         basicItem(CharredItems.GOLD_RING.get());
         basicItem(CharredItems.BLIGHT_RING.get());
@@ -33,11 +34,16 @@ public class CharredItemModelProvider extends ItemModelProvider {
         handheld(CharredItems.BLAZE_SLAYER.get());
         handheld(CharredItems.WITHERED_SWORD.get());
 
+        mushroomItemBlock(CharredBlocks.MYSTIC_MUSHROOM_BLOCK.get());
+        mushroomItemBlock(CharredBlocks.MYSTIC_MUSHROOM_STEM.get());
 
         basicItemBlock(CharredBlocks.DROOPING_VINES.get(), CharredBlocks.DROOPING_VINES_PLANT.get());
         basicItemBlock(CharredBlocks.BLIGHT_ROOT.get());
         basicItemBlock(CharredBlocks.BLIGHT_FUNGUS.get());
         basicItemBlock(CharredBlocks.WITHERED_FUNGUS.get());
+        basicItemBlock(CharredBlocks.MYSTIC_MUSHROOM.get());
+        basicItemBlock(CharredBlocks.MYSTIC_VINES.get(), CharredBlocks.MYSTIC_VINES_PLANT.get());
+        basicItemBlock(CharredBlocks.MYSTIC_ROOT.get());
 
         itemBlock(CharredBlocks.EXOTIC_SHROOMLIGHT.get());
         basicItem(CharredItems.BLIGHT_SIGN.get());
@@ -47,6 +53,7 @@ public class CharredItemModelProvider extends ItemModelProvider {
 
         itemBlock(CharredBlocks.BLIGHT_NYLIUM.get());
         itemBlock(CharredBlocks.WITHERED_NYLIUM.get());
+        itemBlock(CharredBlocks.MYSTIC_NYLIUM.get());
 
         itemBlock(CharredBlocks.BLIGHT_PLANKS.get());
         itemBlock(CharredBlocks.WITHERED_PLANKS.get());
@@ -96,6 +103,10 @@ public class CharredItemModelProvider extends ItemModelProvider {
         this.withExistingParent(this.blockName(block), modLoc("block/"+this.blockName(block)));
     }
 
+    public void mushroomItemBlock(Block block) {
+        this.withExistingParent(this.blockName(block), modLoc("block/"+this.blockName(block)+"_inventory"));
+    }
+
     public void bowItem(Item item) {
         this.withExistingParent(this.itemName(item) + "_pulling_0", this.mcLoc("item/bow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_0"));
         this.withExistingParent(this.itemName(item) + "_pulling_1", this.mcLoc("item/bow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_1"));
@@ -139,7 +150,7 @@ public class CharredItemModelProvider extends ItemModelProvider {
     public ItemModelBuilder basicItemBlock(ResourceLocation block, ResourceLocation block2)
     {
         return getBuilder(block.toString())
-                .parent(new ModelFile.UncheckedModelFile("block/generated"))
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation(block2.getNamespace(), "block/" + block2.getPath()));
     }
 

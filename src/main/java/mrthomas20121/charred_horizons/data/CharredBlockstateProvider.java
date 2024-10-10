@@ -6,7 +6,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CeilingHangingSignBlock;
+import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.block.WallHangingSignBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -32,14 +34,28 @@ public class CharredBlockstateProvider extends BlockStateProvider {
         simpleBlock(CharredBlocks.DROOPING_VINES_PLANT.get(), models().cross(CharredHorizons.MOD_ID+":drooping_vines_plant",
                 blockTexture(CharredBlocks.DROOPING_VINES_PLANT.get())));
 
+        simpleBlock(CharredBlocks.MYSTIC_VINES.get(), models().cross(CharredHorizons.MOD_ID+":mystic_vines",
+                blockTexture(CharredBlocks.MYSTIC_VINES.get())));
+
+        simpleBlock(CharredBlocks.MYSTIC_VINES_PLANT.get(), models().cross(CharredHorizons.MOD_ID+":mystic_vines_plant",
+                blockTexture(CharredBlocks.MYSTIC_VINES_PLANT.get())));
+
         simpleBlock(CharredBlocks.BLIGHT_ROOT.get(), models().cross(CharredHorizons.MOD_ID+":blight_root",
                 blockTexture(CharredBlocks.BLIGHT_ROOT.get())));
+
+        simpleBlock(CharredBlocks.MYSTIC_ROOT.get(), models().cross(CharredHorizons.MOD_ID+":mystic_root",
+                blockTexture(CharredBlocks.MYSTIC_ROOT.get())));
 
         simpleBlock(CharredBlocks.BLIGHT_FUNGUS.get(), models().cross(CharredHorizons.MOD_ID+":blight_fungus",
                 blockTexture(CharredBlocks.BLIGHT_FUNGUS.get())));
 
         simpleBlock(CharredBlocks.WITHERED_FUNGUS.get(), models().cross(CharredHorizons.MOD_ID+":withered_fungus",
                 blockTexture(CharredBlocks.WITHERED_FUNGUS.get())));
+        simpleBlock(CharredBlocks.MYSTIC_MUSHROOM.get(), models().cross(CharredHorizons.MOD_ID+":mystic_mushroom",
+                blockTexture(CharredBlocks.MYSTIC_MUSHROOM.get())));
+
+        hugeMushroomBlock(CharredBlocks.MYSTIC_MUSHROOM_BLOCK.get());
+        hugeMushroomBlock(CharredBlocks.MYSTIC_MUSHROOM_STEM.get());
 
         simpleBlock(CharredBlocks.BLIGHT_NYLIUM.get(), models().cubeBottomTop(
                 CharredHorizons.MOD_ID+":blight_nylium",
@@ -52,6 +68,12 @@ public class CharredBlockstateProvider extends BlockStateProvider {
                 new ResourceLocation(CharredHorizons.MOD_ID, "block/withered_nylium_side"),
                 new ResourceLocation("minecraft:block/netherrack"),
                 new ResourceLocation(CharredHorizons.MOD_ID, "block/withered_nylium")));
+
+        simpleBlock(CharredBlocks.MYSTIC_NYLIUM.get(), models().cubeBottomTop(
+                CharredHorizons.MOD_ID+":mystic_nylium",
+                new ResourceLocation(CharredHorizons.MOD_ID, "block/mystic_nylium_side"),
+                new ResourceLocation("minecraft:block/netherrack"),
+                new ResourceLocation(CharredHorizons.MOD_ID, "block/mystic_nylium")));
 
         simpleBlock(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get());
         simpleBlock(CharredBlocks.WITHERED_NETHER_WART_BLOCK.get());
@@ -127,5 +149,83 @@ public class CharredBlockstateProvider extends BlockStateProvider {
         ModelFile sign = models().sign(name(signBlock), texture);
         simpleBlock(signBlock, sign);
         simpleBlock(wallSignBlock, sign);
+    }
+
+    public void hugeMushroomBlock(HugeMushroomBlock block) {
+        ModelFile part1 = models().withExistingParent(name(block), "minecraft:block/template_single_face")
+                .texture("texture", this.modLoc("block/" + name(block)));
+        models().cubeAll(name(block)+"_inventory", blockTexture(block));
+        ModelFile part2 = models().getExistingFile(mcLoc("block/mushroom_block_inside"));
+        getMultipartBuilder(block)
+                .part()
+                .modelFile(part1)
+                .addModel()
+                .condition(BlockStateProperties.NORTH, true).end()
+                .part()
+                .modelFile(part1)
+                .uvLock(true)
+                .rotationY(90)
+                .addModel()
+                .condition(BlockStateProperties.EAST, true).end()
+                .part()
+                .modelFile(part1)
+                .uvLock(true)
+                .rotationY(180)
+                .addModel()
+                .condition(BlockStateProperties.SOUTH, true).end()
+                .part()
+                .modelFile(part1)
+                .uvLock(true)
+                .rotationY(270)
+                .addModel()
+                .condition(BlockStateProperties.WEST, true).end()
+                .part()
+                .modelFile(part1)
+                .uvLock(true)
+                .rotationX(270)
+                .addModel()
+                .condition(BlockStateProperties.UP, true).end()
+                .part()
+                .modelFile(part1)
+                .uvLock(true)
+                .rotationX(90)
+                .addModel()
+                .condition(BlockStateProperties.DOWN, false).end()
+
+                // second parts of the builder
+                .part()
+                .modelFile(part2)
+                .addModel()
+                .condition(BlockStateProperties.NORTH, false).end()
+                .part()
+                .modelFile(part2)
+                .uvLock(false)
+                .rotationY(90)
+                .addModel()
+                .condition(BlockStateProperties.EAST, false).end()
+                .part()
+                .modelFile(part2)
+                .uvLock(false)
+                .rotationY(180)
+                .addModel()
+                .condition(BlockStateProperties.SOUTH, false).end()
+                .part()
+                .modelFile(part2)
+                .uvLock(false)
+                .rotationY(270)
+                .addModel()
+                .condition(BlockStateProperties.WEST, false).end()
+                .part()
+                .modelFile(part2)
+                .uvLock(false)
+                .rotationX(270)
+                .addModel()
+                .condition(BlockStateProperties.UP, false).end()
+                .part()
+                .modelFile(part2)
+                .uvLock(false)
+                .rotationX(90)
+                .addModel()
+                .condition(BlockStateProperties.DOWN, false).end();
     }
 }

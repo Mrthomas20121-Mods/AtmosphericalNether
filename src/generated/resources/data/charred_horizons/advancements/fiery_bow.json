@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:nether/root",
   "criteria": {
-    "gold_ring": {
+    "fiery_bow": {
       "conditions": {
         "items": [
           {
@@ -32,7 +32,7 @@
   },
   "requirements": [
     [
-      "gold_ring"
+      "fiery_bow"
     ]
   ],
   "sends_telemetry_event": true

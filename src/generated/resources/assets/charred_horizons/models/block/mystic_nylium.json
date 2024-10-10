@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "minecraft:block/netherrack",
+    "side": "charred_horizons:block/mystic_nylium_side",
+    "top": "charred_horizons:block/mystic_nylium"
+  }
+}

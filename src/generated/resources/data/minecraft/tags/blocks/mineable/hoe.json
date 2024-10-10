@@ -2,6 +2,8 @@
   "values": [
     "charred_horizons:blight_nether_wart",
     "charred_horizons:withered_nether_wart",
-    "charred_horizons:exotic_shroomlight"
+    "charred_horizons:exotic_shroomlight",
+    "charred_horizons:mystic_mushroom_block",
+    "charred_horizons:mystic_mushroom_stem"
   ]
 }

@@ -16,6 +16,7 @@ public class CharredLoot {
 
     public static ResourceLocation SULFURIC_SKELETON = register("entities/sulfuric_skeleton");
     public static ResourceLocation FIERY_SPIDER = register("entities/fiery_spider");
+    public static ResourceLocation SPORE_CREEPER = register("entities/spore_creeper");
 
     public static ResourceLocation register(String name) {
         ResourceLocation resourceLocation = new ResourceLocation(CharredHorizons.MOD_ID, name);

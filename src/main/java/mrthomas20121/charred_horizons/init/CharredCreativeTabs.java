@@ -37,11 +37,14 @@ public class CharredCreativeTabs {
         out.accept(CharredItems.MYSTERIOUS_CHARM.get());
         out.accept(CharredItems.WITHERED_SWORD.get());
         out.accept(CharredItems.BLAZE_SLAYER.get());
+        out.accept(CharredBlocks.DROOPING_VINES.get());
+        out.accept(CharredBlocks.MYSTIC_VINES.get());
         out.accept(CharredBlocks.BLIGHT_ROOT.get());
         out.accept(CharredBlocks.BLIGHT_FUNGUS.get());
         out.accept(CharredBlocks.WITHERED_FUNGUS.get());
         out.accept(CharredItems.SULFURIC_SKELETON_EGG.get());
         out.accept(CharredItems.FIERY_SPIDER_EGG.get());
+        out.accept(CharredItems.SPORE_CREEPER_EGG.get());
     }
 
     public static void fillBlockTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
@@ -77,6 +80,11 @@ public class CharredCreativeTabs {
         out.accept(CharredBlocks.WITHERED_DOOR.get());
         out.accept(CharredBlocks.WITHERED_BUTTON.get());
         out.accept(CharredBlocks.WITHERED_SIGN.get());
+
+        out.accept(CharredBlocks.MYSTIC_NYLIUM.get());
+        out.accept(CharredBlocks.MYSTIC_MUSHROOM_BLOCK.get());
+        out.accept(CharredBlocks.MYSTIC_MUSHROOM_STEM.get());
+
         out.accept(CharredBlocks.WITHERED_HANGING_SIGN.get());
         out.accept(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get());
     }
