@@ -1,0 +1,83 @@
+{
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "charred_horizons:decaying_valley": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "charred_horizons:decaying_valley"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "charred_horizons:desolated_forest": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "charred_horizons:desolated_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "charred_horizons:fungal_abyss": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "charred_horizons:fungal_abyss"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.charred_horizons.explore_nether.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "charred_horizons:gold_ring"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.charred_horizons.explore_nether"
+    }
+  },
+  "requirements": [
+    [
+      "charred_horizons:decaying_valley"
+    ],
+    [
+      "charred_horizons:desolated_forest"
+    ],
+    [
+      "charred_horizons:fungal_abyss"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": true
+}

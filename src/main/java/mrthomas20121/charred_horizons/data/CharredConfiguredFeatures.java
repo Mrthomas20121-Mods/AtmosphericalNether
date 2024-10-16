@@ -38,6 +38,7 @@ public class CharredConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_MYSTIC_MUSHROOM = createKey("small_mystic_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_MYSTIC_MUSHROOM = createKey("huge_mystic_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYSTIC_MUSHROOM = createKey("mystic_mushroom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHROOMLIGHT = createKey("shroomlight");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String p_255643_) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
@@ -80,6 +81,7 @@ public class CharredConfiguredFeatures {
         register(context, WITHERED_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationConfig(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.WITHER_ROSE.defaultBlockState(), 87).add(CharredBlocks.WITHERED_FUNGUS.get().defaultBlockState(), 1)), 8, 4));
 
         register(context, DROOPING_VINES, CharredFeatures.DROOPING_VINES.get(), FeatureConfiguration.NONE);
+        register(context, SHROOMLIGHT, CharredFeatures.SHROOMLIGHT.get(), FeatureConfiguration.NONE);
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

@@ -1,5 +1,7 @@
 package mrthomas20121.charred_horizons.block;
 
+import mrthomas20121.charred_horizons.data.CharredConfiguredFeatures;
+import mrthomas20121.charred_horizons.init.CharredBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -19,13 +21,6 @@ public class CharredNyliumBlock extends NyliumBlock {
         super(p_55057_);
     }
 
-    /**
-     * todo: add blight and withered nylium to this method
-     * @param p_221825_
-     * @param p_221826_
-     * @param p_221827_
-     * @param p_221828_
-     */
     public void performBonemeal(ServerLevel p_221825_, RandomSource p_221826_, BlockPos p_221827_, BlockState p_221828_) {
         BlockState blockstate = p_221825_.getBlockState(p_221827_);
         BlockPos blockpos = p_221827_.above();
@@ -38,6 +33,18 @@ public class CharredNyliumBlock extends NyliumBlock {
             this.place(registry, NetherFeatures.NETHER_SPROUTS_BONEMEAL, p_221825_, chunkgenerator, p_221826_, blockpos);
             if (p_221826_.nextInt(8) == 0) {
                 this.place(registry, NetherFeatures.TWISTING_VINES_BONEMEAL, p_221825_, chunkgenerator, p_221826_, blockpos);
+            }
+        }
+        else if (blockstate.is(CharredBlocks.BLIGHT_NYLIUM.get())) {
+            this.place(registry, CharredConfiguredFeatures.BLIGHT_VEGETATION, p_221825_, chunkgenerator, p_221826_, blockpos);
+        }
+        else if (blockstate.is(CharredBlocks.WITHERED_NYLIUM.get())) {
+            this.place(registry, CharredConfiguredFeatures.WITHERED_VEGETATION, p_221825_, chunkgenerator, p_221826_, blockpos);
+        }
+        else if (blockstate.is(CharredBlocks.MYSTIC_NYLIUM.get())) {
+            this.place(registry, CharredConfiguredFeatures.MYSTIC_VEGETATION, p_221825_, chunkgenerator, p_221826_, blockpos);
+            if (p_221826_.nextInt(8) == 0) {
+                this.place(registry, CharredConfiguredFeatures.MYSTIC_VINES_BONE_MEAL, p_221825_, chunkgenerator, p_221826_, blockpos);
             }
         }
 

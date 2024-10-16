@@ -20,6 +20,9 @@ public class CharredBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+        tag(BlockTags.CLIMBABLE).add(CharredBlocks.DROOPING_VINES.get(), CharredBlocks.DROOPING_VINES_PLANT.get(),
+                CharredBlocks.MYSTIC_VINES.get(), CharredBlocks.MYSTIC_VINES_PLANT.get());
         tag(BlockTags.MUSHROOM_GROW_BLOCK).add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());
         tag(BlockTags.NYLIUM)
                 .add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());

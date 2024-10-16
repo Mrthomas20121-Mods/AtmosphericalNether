@@ -39,7 +39,7 @@
     [
       "minecraft:patch_fire",
       "minecraft:glowstone_extra",
-      "minecraft:glowstone",
+      "charred_horizons:shroomlight",
       "minecraft:brown_mushroom_nether",
       "minecraft:red_mushroom_nether",
       "minecraft:ore_magma",
@@ -95,7 +95,7 @@
       },
       {
         "type": "charred_horizons:spore_creeper",
-        "maxCount": 4,
+        "maxCount": 5,
         "minCount": 3,
         "weight": 10
       }

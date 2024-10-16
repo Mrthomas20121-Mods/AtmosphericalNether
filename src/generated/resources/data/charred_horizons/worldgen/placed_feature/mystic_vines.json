@@ -2,8 +2,20 @@
   "feature": "charred_horizons:mystic_vines",
   "placement": [
     {
-      "type": "minecraft:count_on_every_layer",
-      "count": 10
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 10,
+            "weight": 9
+          },
+          {
+            "data": 11,
+            "weight": 1
+          }
+        ]
+      }
     },
     {
       "type": "minecraft:in_square"

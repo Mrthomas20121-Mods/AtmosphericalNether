@@ -29,4 +29,6 @@ public class DroopingVinePlantBlock extends GrowingPlantBodyBlock {
     protected boolean canGrowInto(BlockState blockState) {
         return NetherVines.isValidGrowthState(blockState);
     }
+
+
 }

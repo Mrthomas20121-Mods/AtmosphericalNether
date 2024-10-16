@@ -101,7 +101,11 @@ public class CharredLangProvider extends LanguageProvider {
         add("advancement.charred_horizons.fiery_spider.desc", "Kill a Fiery Spider.");
         add("advancement.charred_horizons.sulfuric_skeleton", "What in Tarnation!");
         add("advancement.charred_horizons.sulfuric_skeleton.desc", "Kill a Sulfuric Skeleton.");
+        add("advancement.charred_horizons.spore_creeper", "Watch out for the spores.");
+        add("advancement.charred_horizons.spore_creeper.desc", "Kill a Spore Creeper.");
         add("advancement.charred_horizons.improved_farmland", "Work Smart, Not Harder.");
         add("advancement.charred_horizons.improved_farmland.desc", "Craft an Improved Farmland Block.");
+        add("advancements.charred_horizons.explore_nether", "New Horizons!");
+        add("advancements.charred_horizons.explore_nether.description", "Explore all Charred Horizons Nether biomes.");
     }
 }

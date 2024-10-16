@@ -14,8 +14,11 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class SulfuricSkeleton extends AbstractSkeleton {
 
@@ -26,6 +29,16 @@ public class SulfuricSkeleton extends AbstractSkeleton {
     @Override
     protected SoundEvent getStepSound() {
         return SoundEvents.SKELETON_STEP;
+    }
+
+    @Override
+    public boolean canFireProjectileWeapon(ProjectileWeaponItem item) {
+
+        if(ForgeRegistries.ITEMS.tags() != null) {
+            return ForgeRegistries.ITEMS.tags().getTag(Tags.Items.TOOLS_BOWS).contains(item);
+        }
+
+        return super.canFireProjectileWeapon(item);
     }
 
     protected AbstractArrow getArrow(ItemStack p_33846_, float p_33847_) {

@@ -68,7 +68,7 @@ public class FieryBowItem extends BowItem {
                         p_40668_.addFreshEntity(abstractarrow);
                     }
 
-                    p_40668_.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (p_40668_.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    p_40668_.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (p_40668_.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
                     if (!flag1 && !player.getAbilities().instabuild) {
                         itemstack.shrink(1);
                         if (itemstack.isEmpty()) {
@@ -83,12 +83,17 @@ public class FieryBowItem extends BowItem {
     }
 
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return super.canApplyAtEnchantingTable(stack, enchantment) && !enchantment.equals(Enchantments.FLAMING_ARROWS);
+    public int getMaxDamage(ItemStack stack) {
+        return 500;
+    }
+
+    @Override
+    public boolean isDamageable(ItemStack stack) {
+        return true;
     }
 
     @Override
     public int getDefaultProjectileRange() {
-        return 18;
+        return 20;
     }
 }

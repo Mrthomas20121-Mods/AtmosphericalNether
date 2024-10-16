@@ -1,5 +1,5 @@
 {
-  "feature": "charred_horizons:drooping_vines",
+  "feature": "charred_horizons:shroomlight",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,11 +7,11 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "data": 10,
-            "weight": 9
+            "data": 2,
+            "weight": 39
           },
           {
-            "data": 11,
+            "data": 3,
             "weight": 1
           }
         ]

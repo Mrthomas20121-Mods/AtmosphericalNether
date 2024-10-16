@@ -23,7 +23,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "charred_horizons:fiery_bow"
+      "item": "charred_horizons:fiery_bow",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
